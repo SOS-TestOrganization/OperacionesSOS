@@ -27,7 +27,7 @@
 * Nuevas Variables		 : <\VM   VM\>
 * Fecha Modificacion		 : <\FM   10/07/2013			FM\>
 *---------------------------------------------------------------------------------*/
-
+--Ojo se pone esta linea para realizar prueba con GIT
 
 CREATE   PROCEDURE [dbo].[spConsultaPagos] @lnEstadoPago	udtConsecutivo
 As  			
