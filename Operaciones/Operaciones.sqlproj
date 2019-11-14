@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>Operaciones</RootNamespace>
     <AssemblyName>Operaciones</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,1344 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Defaults\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="dbo\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\tbPromotoresSedes.sql" />
+    <Build Include="dbo\Tables\tbEstadosDocumentoFE.sql" />
+    <Build Include="dbo\Tables\TbAbonosNotasContrato.sql" />
+    <Build Include="dbo\Tables\tbEstadosLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbParametrosEliminados.sql" />
+    <Build Include="dbo\Tables\tbEstadosDocumentoFE_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTablasParametrovsRelacion.sql" />
+    <Build Include="dbo\Tables\tbCausasBeneficiariosxLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbTablasRelacionGeneral.sql" />
+    <Build Include="dbo\Tables\tbTiposAplicacionNota_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNotasEstadoCuenta.sql" />
+    <Build Include="dbo\Tables\tbTiposAplicacionNota.sql" />
+    <Build Include="dbo\Tables\tbEstructuraCodigoBarras.sql" />
+    <Build Include="dbo\Tables\tbAutorizadoresCarteraPAC.sql" />
+    <Build Include="dbo\Tables\tbTiposMovimiento_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstructuraCodigoBarras_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbAutorizadoresCarteraPAC_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCampos.sql" />
+    <Build Include="dbo\Tables\tbTiposMovimiento.sql" />
+    <Build Include="dbo\Tables\TbDatosAportanteNotaReintegro.sql" />
+    <Build Include="dbo\Tables\tbMensajesxPeriodo_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbParametrosGenerales.sql" />
+    <Build Include="dbo\Tables\tbTipoDocumentoNotaReintegro.sql" />
+    <Build Include="dbo\Tables\tbEstadosCuentaContratos.sql" />
+    <Build Include="dbo\Tables\tbTiposNotas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoEstadoLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbcontratosdesafiliadosXmoraPac.sql" />
+    <Build Include="dbo\Tables\tbTipoDocumentoNotaReintegro_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbParametrosGenerales_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoTarificacionXProceso.sql" />
+    <Build Include="dbo\Tables\tbTiposNotas.sql" />
+    <Build Include="dbo\Tables\tbTiposProcesoCarteraPac_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbResponsableXDescuento_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbExistenciaAportante.sql" />
+    <Build Include="dbo\Tables\tbTiposProcesoCarteraPac.sql" />
+    <Build Include="dbo\Tables\tbBasesAplicadas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbAbonosCuentasManuales.sql" />
+    <Build Include="dbo\Tables\tbExistenciaAportante_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCuentasContratosBeneficiarios.sql" />
+    <Build Include="dbo\Tables\tbBasesAplicadas.sql" />
+    <Build Include="dbo\Tables\tbProcesosCarteraPac.sql" />
+    <Build Include="dbo\Tables\tbRelacionNotasXNotaDebito.sql" />
+    <Build Include="dbo\Tables\TbHistoricoTarifaxBeneficiario.sql" />
+    <Build Include="dbo\Tables\tbEstadosPromotor_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRelacionNotasCreditoReiNotasReintegro.sql" />
+    <Build Include="dbo\Tables\tbAcumuladosContrato.sql" />
+    <Build Include="dbo\Tables\tbCuentasBeneficiariosConceptos.sql" />
+    <Build Include="dbo\Tables\tbEstadosPromotor.sql" />
+    <Build Include="dbo\Tables\tbAbonosManualContrato.sql" />
+    <Build Include="dbo\Tables\tbTiposConsecutivo_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCampoConsultaxCriterioConsultas.sql" />
+    <Build Include="dbo\Tables\tbDiasCobroMoraSucursal_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCampoConsultaxCriterioConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbPromotores_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposPromotor_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCamposConsultas.sql" />
+    <Build Include="dbo\Tables\TbPeriodosSuspencion.sql" />
+    <Build Include="dbo\Tables\TbPlanoFichaManuelita.sql" />
+    <Build Include="dbo\Tables\tbCamposConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposPromotor.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultas.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultas_Vigencias.sql" />
+    <Build Include="dbo\Tables\TbInterfaceCedulasPlanosCarteraPac.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultaxOpcion.sql" />
+    <Build Include="dbo\Tables\tbCriteriosConsultaxOpcion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbModosAplicacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbPeriodosliquidacion.sql" />
+    <Build Include="dbo\Tables\TbPlanoFichaProvidencia.sql" />
+    <Build Include="dbo\Tables\tbAbonos.sql" />
+    <Build Include="dbo\Tables\tbNotasPac.sql" />
+    <Build Include="dbo\Tables\tbModosAplicacion.sql" />
+    <Build Include="dbo\Tables\tbCuentasManualesContrato.sql" />
+    <Build Include="dbo\Tables\tbLogMarcacionMoraPac.sql" />
+    <Build Include="dbo\Tables\tbTiposMorosidad_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposMorosidad.sql" />
+    <Build Include="dbo\Tables\tbConceptosLiquidacion.sql" />
+    <Build Include="dbo\Tables\TmpPagos.sql" />
+    <Build Include="dbo\Tables\tbCuentasManualesBeneficiarioxConceptos.sql" />
+    <Build Include="dbo\Tables\tbDiasMora_Vigencias.sql" />
+    <Build Include="dbo\Tables\TPagos.sql" />
+    <Build Include="dbo\Tables\tbTiposInconsistenciaFE.sql" />
+    <Build Include="dbo\Tables\ValorIva.sql" />
+    <Build Include="dbo\Tables\tbDiasMora.sql" />
+    <Build Include="dbo\Tables\tbTiposInconsistenciaFE_vigencias.sql" />
+    <Build Include="dbo\Tables\tbAutorizadoresEspeciales_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbGruposxConcepto.sql" />
+    <Build Include="dbo\Tables\tbAutorizadoresEspeciales.sql" />
+    <Build Include="dbo\Tables\tbPagos.sql" />
+    <Build Include="dbo\Tables\tbAutorizacionesNotas.sql" />
+    <Build Include="dbo\Tables\tbIncidenciasCarteraPac.sql" />
+    <Build Include="dbo\Tables\tbMensajesxPeriodo.sql" />
+    <Build Include="dbo\Tables\tbGruposLiquidacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbPagosNotas.sql" />
+    <Build Include="dbo\Tables\tbGruposLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbParametrosFijos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbGrupoLiquidacionAportante_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbParametrosFijos.sql" />
+    <Build Include="dbo\Tables\tbGrupoLiquidacionAportante.sql" />
+    <Build Include="dbo\Tables\tbTiposConsecutivo.sql" />
+    <Build Include="dbo\Tables\tbConceptosDIAN.sql" />
+    <Build Include="dbo\Tables\tbConceptosDIAN_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDescuentos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNotasConceptos.sql" />
+    <Build Include="dbo\Tables\tbDescuentos.sql" />
+    <Build Include="dbo\Tables\tmppagosautomaticosPAC.sql" />
+    <Build Include="dbo\Tables\tbInconsistenciasxNotasPAC.sql" />
+    <Build Include="dbo\Tables\tbPromotores.sql" />
+    <Build Include="dbo\Tables\tbAbonosContrato.sql" />
+    <Build Include="dbo\Tables\tbAcumuladosSucursalAportante.sql" />
+    <Build Include="dbo\Tables\tbEstadosxNota.sql" />
+    <Build Include="dbo\Tables\tbLiquidaciones.sql" />
+    <Build Include="dbo\Tables\TbHistoricoEstadoXPago.sql" />
+    <Build Include="dbo\Tables\tbHistoricoAbonoContratoDesaplicado.sql" />
+    <Build Include="dbo\Tables\tbInconsistenciasxEstadoCuenta.sql" />
+    <Build Include="dbo\Tables\tbMensajes.sql" />
+    <Build Include="dbo\Tables\tbTipoProceso.sql" />
+    <Build Include="dbo\Tables\tbNotasCreditoContratosxNotasDebito.sql" />
+    <Build Include="dbo\Tables\tbTiposCodigosDIAN.sql" />
+    <Build Include="dbo\Tables\tbResponsableXDescuento.sql" />
+    <Build Include="dbo\Tables\tbMensajes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoAbonoNotaContratoDesaplicado.sql" />
+    <Build Include="dbo\Tables\tbformulariosCoordinadorPac.sql" />
+    <Build Include="dbo\Tables\tbTiposCodigosDIAN_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNotasContrato.sql" />
+    <Build Include="dbo\Tables\tbEstadosxTipoNota_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCuentasManuales.sql" />
+    <Build Include="dbo\Tables\tbParametrosProgramacionCarteraPac.sql" />
+    <Build Include="dbo\Tables\tbCodigosDIAN.sql" />
+    <Build Include="dbo\Tables\tbRelAgrupacionxParametrosProgramacion.sql" />
+    <Build Include="dbo\Tables\tbNotasContratoxConcepto.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresParametrosProgramacion.sql" />
+    <Build Include="dbo\Tables\tbCuentasManualesBeneficiario.sql" />
+    <Build Include="dbo\Tables\TbPagosConceptos.sql" />
+    <Build Include="dbo\Tables\tbCodigosDIAN_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTipoDocumentos.sql" />
+    <Build Include="dbo\Tables\tbEstadosNota_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTipoDocumentos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstadosCuentaConceptos.sql" />
+    <Build Include="dbo\Tables\tbEstadosNota.sql" />
+    <Build Include="dbo\Tables\tbLogActivacionMoraPac.sql" />
+    <Build Include="dbo\Tables\tbHistoricoTarificacionXReliquidacion.sql" />
+    <Build Include="dbo\Tables\tbGruposxConcepto_Vigencias.sql" />
+    <Build Include="dbo\Tables\DatosInforme.sql" />
+    <Build Include="dbo\Tables\tbCuentasContratoReintegro.sql" />
+    <Build Include="dbo\Tables\tbPeriodosliquidacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstadosCuenta.sql" />
+    <Build Include="dbo\Tables\tbTiposPago_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbPasosLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbConceptosLiquidacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstadosxTipoNota.sql" />
+    <Build Include="dbo\Tables\tbTiposPago.sql" />
+    <Build Include="dbo\Tables\tmpEstadosCuenta.sql" />
+    <Build Include="dbo\Tables\tbTipoProceso_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNotasContratoReintegro.sql" />
+    <Build Include="dbo\Tables\tbEstadosPago_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstadosxPromotor.sql" />
+    <Build Include="dbo\Tables\tbEstadosPago.sql" />
+    <Build Include="dbo\Tables\tbDiasCobroMoraSucursal.sql" />
+    <Build Include="dbo\Tables\tmptbNotasEstadoCuenta.sql" />
+    <Build Include="dbo\Tables\tbCuentasManualesConcepto.sql" />
+    <Build Include="dbo\Tables\tmptbNotasPac.sql" />
+    <Build Include="dbo\Tables\tbEstadosEstadosCuenta_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbLogliquidacionesContratos.sql" />
+    <Build Include="dbo\Tables\tbEstadosEstadosCuenta.sql" />
+    <Build Include="dbo\Tables\tbEmpresasExcluidaMarcaExtemporaneidad.sql" />
+    <Build Include="dbo\Tables\tbNotasBeneficiariosContratos.sql" />
+    <Build Include="dbo\Tables\tmpResultadoPACFE.sql" />
+    <Build Include="dbo\Tables\tbEstadosCuentaContratosPrevia.sql" />
+    <Build Include="dbo\Tables\tbEstadosPeriodo.sql" />
+    <Build Include="dbo\Tables\tbCriteriosLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbEstadosCuentaPrevia.sql" />
+    <Build Include="dbo\Tables\tbEstadosPeriodo_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNotasAplicadas.sql" />
+    <Build Include="dbo\Tables\tbEstadosLiquidacion_Vigencias.sql" />
+    <Build Include="dbo\Views\vw_TRAZA_Objetos.sql" />
+    <Build Include="dbo\Views\vwIndices.sql" />
+    <Build Include="dbo\Views\vwIndicesColumnas.sql" />
+    <Build Include="dbo\Defaults\dflts_N.sql" />
+    <Build Include="dbo\Defaults\dflts_S.sql" />
+    <Build Include="Security\MStran_PAL_role.sql" />
+    <Build Include="Security\MSReplPAL_13_3.sql" />
+    <Build Include="Security\MSReplPAL_13_4.sql" />
+    <Build Include="Security\Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\Administrador Alarmas Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\Coordinador Parametros Cartera Pos y Pac.sql" />
+    <Build Include="Security\Auditor.sql" />
+    <Build Include="Security\portal_rol.sql" />
+    <Build Include="Security\AdminScripts_Cambios.sql" />
+    <Build Include="Security\910001 Operador Procesos.sql" />
+    <Build Include="Security\Consulta Parametros Afiliacion.sql" />
+    <Build Include="Security\Coordinador Parametros Productos Comercial.sql" />
+    <Build Include="Security\migracion.sql" />
+    <Build Include="Security\Salud.sql" />
+    <Build Include="Security\Comercial.sql" />
+    <Build Include="Security\Admon Contratos.sql" />
+    <Build Include="Security\Admon Productos.sql" />
+    <Build Include="Security\Administrador Novedades.sql" />
+    <Build Include="Security\Control Coordinador.sql" />
+    <Build Include="Security\Administrador Afiliacion.sql" />
+    <Build Include="Security\Radicador.sql" />
+    <Build Include="Security\Digitador.sql" />
+    <Build Include="Security\Control Proveedor.sql" />
+    <Build Include="Security\Programadores.sql" />
+    <Build Include="Security\Coordinador Parametros Productos.sql" />
+    <Build Include="Security\Coordinador Parametros Productos Salud.sql" />
+    <Build Include="Security\Coordinador Parametros Afiliacion.sql" />
+    <Build Include="Security\Radicador Empleadores.sql" />
+    <Build Include="Security\Administracion Greco.sql" />
+    <Build Include="Security\Auxiliar de Mesa y Control Aportes.sql" />
+    <Build Include="Security\Coordinador Parametros Greco.sql" />
+    <Build Include="Security\Auxiliar de Mesa y Control Aportes 1.sql" />
+    <Build Include="Security\Auxiliar de Mesa y Control Aportes 2.sql" />
+    <Build Include="Security\Auxiliar de Ingresos y Egresos.sql" />
+    <Build Include="Security\Administrador Parametros.sql" />
+    <Build Include="Security\Coordinador Parametros Cartera Pos.sql" />
+    <Build Include="Security\Coordinador Cartera Pac.sql" />
+    <Build Include="Security\Auditoria Interna.sql" />
+    <Build Include="Security\Promotor Cartera Pac.sql" />
+    <Build Include="Security\Auxiliar Cartera Pac.sql" />
+    <Build Include="Security\Consultor Parametros Cartera Pac.sql" />
+    <Build Include="Security\Consultor Cartera Pac.sql" />
+    <Build Include="Security\Coordinador Parametros Cartera Pac.sql" />
+    <Build Include="Security\Jefatura Cartera.sql" />
+    <Build Include="Security\Administrador Cartera Pac.sql" />
+    <Build Include="Security\Coordinador Cartera Pos.sql" />
+    <Build Include="Security\Cordinador Parametros Captacion.sql" />
+    <Build Include="Security\Coordinador Parametros Comisiones.sql" />
+    <Build Include="Security\Analista Nomina.sql" />
+    <Build Include="Security\Administrador Captacion Ingresos.sql" />
+    <Build Include="Security\Analista Tesoreria.sql" />
+    <Build Include="Security\Auditor Tesoreria.sql" />
+    <Build Include="Security\Auxiliar Tesoreria Sedes.sql" />
+    <Build Include="Security\Auxiliar Tesoreria Egresos.sql" />
+    <Build Include="Security\Auxiliar Tesoreria Ingresos.sql" />
+    <Build Include="Security\Consultor Captacion Ingresos.sql" />
+    <Build Include="Security\Consultor Cartera.sql" />
+    <Build Include="Security\Administrador Consulta Unificada.sql" />
+    <Build Include="Security\Asesor Sedes.sql" />
+    <Build Include="Security\Validador.sql" />
+    <Build Include="Security\Inteligencia.sql" />
+    <Build Include="Security\Control General Rezagos.sql" />
+    <Build Include="Security\Responsables Recuperacion.sql" />
+    <Build Include="Security\Consultor Administrativo.sql" />
+    <Build Include="Security\Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Asesor Cartera.sql" />
+    <Build Include="Security\Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\Consultor Asesor Comercial.sql" />
+    <Build Include="Security\Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\Consultor IPS.sql" />
+    <Build Include="Security\Consultor Salud.sql" />
+    <Build Include="Security\Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\Asesor Nacional 1.sql" />
+    <Build Include="Security\Asesor Nacional 2.sql" />
+    <Build Include="Security\Servicio al Cliente.sql" />
+    <Build Include="Security\Administrador de Novedades.sql" />
+    <Build Include="Security\Promotor Cartera.sql" />
+    <Build Include="Security\Jefatura  Cartera.sql" />
+    <Build Include="Security\Consultor Parametros Captacion.sql" />
+    <Build Include="Security\Consulta.sql" />
+    <Build Include="Security\control.sql" />
+    <Build Include="Security\Administrador Carnetizacion y Bonos.sql" />
+    <Build Include="Security\Auxiliar de Carnetizacion y Bonos.sql" />
+    <Build Include="Security\Servicio Cliente de Carnetizacion y Bonos.sql" />
+    <Build Include="Security\Centro Documentacion Carnetizacion y Bonos.sql" />
+    <Build Include="Security\Auditoria Carnetizacion y Bonos.sql" />
+    <Build Include="Security\Coordinador Parametros IE.sql" />
+    <Build Include="Security\Consultor Administrador.sql" />
+    <Build Include="Security\Generador Informes y Extracciones.sql" />
+    <Build Include="Security\Coordinador Comisiones.sql" />
+    <Build Include="Security\Administrador Asesores Comisiones.sql" />
+    <Build Include="Security\Consulta Asesores Comisiones.sql" />
+    <Build Include="Security\Administrador Informes Población.sql" />
+    <Build Include="Security\Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\Auxiliar de Prestaciones Economicas.sql" />
+    <Build Include="Security\Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\Coordinador Parametros Captacion.sql" />
+    <Build Include="Security\Administrador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Coordinador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Asesor Nacional.sql" />
+    <Build Include="Security\ConsultaTemp.sql" />
+    <Build Include="Security\Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Tecnico de Operaciones.sql" />
+    <Build Include="Security\Soporte Tecnico Greco.sql" />
+    <Build Include="Security\Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Consultor de Prestaciones Medicas.sql" />
+    <Build Include="Security\Auditor de Prestaciones Medicas.sql" />
+    <Build Include="Security\Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Capitacion Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Incapacidades Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Notificaciones Vision Salud.sql" />
+    <Build Include="Security\Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\Auxiliar de Cuentas Medicas.sql" />
+    <Build Include="Security\Consultor de Cuentas Medicas.sql" />
+    <Build Include="Security\Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\Administrador Informes Poblacion.sql" />
+    <Build Include="Security\Consultas e Informes Comisiones.sql" />
+    <Build Include="Security\Administrador Interface Contable.sql" />
+    <Build Include="Security\Consultor Auditor.sql" />
+    <Build Include="Security\Validacion.sql" />
+    <Build Include="Security\100001 Control General Greco.sql" />
+    <Build Include="Security\100002 Validacion.sql" />
+    <Build Include="Security\100003 Validacion Especial.sql" />
+    <Build Include="Security\100004 Admon Produccion.sql" />
+    <Build Include="Security\100005 Auxiliar de Ingresos y Egresos.sql" />
+    <Build Include="Security\100006 Analista Operaciones.sql" />
+    <Build Include="Security\100007 Soporte Tecnico Greco.sql" />
+    <Build Include="Security\100008 Admon Notas.sql" />
+    <Build Include="Security\110001 Coordinador Cartera Pos.sql" />
+    <Build Include="Security\SOS_110001 Coordinador Cartera Pos.sql" />
+    <Build Include="Security\110002 Asesor Nacional 1.sql" />
+    <Build Include="Security\110003 Asesor Sedes.sql" />
+    <Build Include="Security\110004 Asesor Nacional 2.sql" />
+    <Build Include="Security\110005 Auditor Cartera Pos.sql" />
+    <Build Include="Security\120001 Administrador Interface Contable.sql" />
+    <Build Include="Security\130002 Responsables Recuperacion.sql" />
+    <Build Include="Security\130003 Auditor Rezagos.sql" />
+    <Build Include="Security\190001 Coordinador Parametros Productos Comercial.sql" />
+    <Build Include="Security\190002 Coordinador Parametros Productos Salud.sql" />
+    <Build Include="Security\200101 Control Coordinador.sql" />
+    <Build Include="Security\200102 Administrador Afiliacion.sql" />
+    <Build Include="Security\200103 Radicador.sql" />
+    <Build Include="Security\200104 Control Proveedor.sql" />
+    <Build Include="Security\200105 digitador.sql" />
+    <Build Include="Security\200106 Admon Contratos.sql" />
+    <Build Include="Security\200107 Servicio al Cliente.sql" />
+    <Build Include="Security\200108 Administrador de Novedades.sql" />
+    <Build Include="Security\200109 Promotor de Cartera.sql" />
+    <Build Include="Security\600010 Consultor Parametros Captacion.sql" />
+    <Build Include="Security\200110 Validador.sql" />
+    <Build Include="Security\200201 Comercial.sql" />
+    <Build Include="Security\200202 Salud.sql" />
+    <Build Include="Security\200203 Admon Productos.sql" />
+    <Build Include="Security\200301 Analista Nomina.sql" />
+    <Build Include="Security\200302 Coordinador Comisiones.sql" />
+    <Build Include="Security\200303 Administrador Asesores Comisiones.sql" />
+    <Build Include="Security\200305 Consultas e Informes Comisiones.sql" />
+    <Build Include="Security\800005 Auditor Tesoreria.sql" />
+    <Build Include="Security\200601 Administrador Carnetizacion y Bonos.sql" />
+    <Build Include="Security\800007 Consultor Cartera.sql" />
+    <Build Include="Security\200602 Auxiliar de Carnetizacion y Bonos.sql" />
+    <Build Include="Security\admongreco.sql" />
+    <Build Include="Security\procesoBdd.sql" />
+    <Build Include="Security\200603 Servicio Cliente de Carnetizacion y Bonos.sql" />
+    <Build Include="Security\100001 Administracion Greco.sql" />
+    <Build Include="Security\200604 Centro Documentacion Carnetizacion y Bonos.sql" />
+    <Build Include="Security\200605 Auditoria Carnetizacion y Bonos.sql" />
+    <Build Include="Security\210001 Generador Informes y Extracciones.sql" />
+    <Build Include="Security\210002 Administrador de Informes de Población.sql" />
+    <Build Include="Security\320001 Administrador de Prestaciones Economicas.sql" />
+    <Build Include="Security\100002 Auxiliar de Mesa y Control Aportes.sql" />
+    <Build Include="Security\320003 Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\320004 Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\600000 Administrador Parametros.sql" />
+    <Build Include="Security\600001 Coordinador Parametros Afiliacion.sql" />
+    <Build Include="Security\600002 Coordinador Parametros Greco.sql" />
+    <Build Include="Security\600003 Consulta Parametros Afiliacion.sql" />
+    <Build Include="Security\600004 Coordinador Parametros Productos Comercial.sql" />
+    <Build Include="Security\600005 Coordinador Parametros Productos Salud.sql" />
+    <Build Include="Security\600006 Coordinador Parametros Cartera Pos.sql" />
+    <Build Include="Security\600007 Consulta Parametros Cartera Pac.sql" />
+    <Build Include="Security\600008 Coordinador Parametros Cartera Pac.sql" />
+    <Build Include="Security\600009 Coordinador Parametros Captacion.sql" />
+    <Build Include="Security\600011 Coordinador Parametros Comisiones.sql" />
+    <Build Include="Security\100003 Auxiliar de Mesa y Control Aportes 1.sql" />
+    <Build Include="Security\100004 Auxiliar de Mesa y Control Aportes 2.sql" />
+    <Build Include="Security\600012 Coordinador Parametros IE.sql" />
+    <Build Include="Security\700001 Administrador cartera Pac.sql" />
+    <Build Include="Security\700002 Jefatura Cartera.sql" />
+    <Build Include="Security\700003 Coordinador Cartera Pac.sql" />
+    <Build Include="Security\700004 Auditoria Interna.sql" />
+    <Build Include="Security\700005 Promotor Cartera Pac.sql" />
+    <Build Include="Security\700006 Auxiliar Cartera Pac.sql" />
+    <Build Include="Security\700007 Consultores Cartera Pac.sql" />
+    <Build Include="Security\800001 Analista Tesoreria.sql" />
+    <Build Include="Security\SOS_800001 Analista Tesoreria.sql" />
+    <Build Include="Security\800002 Auxiliar Tesoreria Ingresos.sql" />
+    <Build Include="Security\SOS_800002 Auxiliar Tesoreria Ingresos.sql" />
+    <Build Include="Security\800004 Auxiliar Tesoreria Sedes.sql" />
+    <Build Include="Security\SOS_800004 Auxiliar Tesoreria Sedes.sql" />
+    <Build Include="Security\800006 Consultor Captacion Ingresos.sql" />
+    <Build Include="Security\SOS_800006 Consultor Captacion Ingresos.sql" />
+    <Build Include="Security\800008 Administrador Captacion Ingresos.sql" />
+    <Build Include="Security\SOS_800008 Administrador Captacion Ingresos.sql" />
+    <Build Include="Security\900001 Consultor Administrativo.sql" />
+    <Build Include="Security\SOS_900001 Consultor Administrativo.sql" />
+    <Build Include="Security\900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\SOS_900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\novedadesweb.sql" />
+    <Build Include="Security\900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\SOS_900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\SOS_900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\900008 Consultor Salud.sql" />
+    <Build Include="Security\SOS_900008 Consultor Salud.sql" />
+    <Build Include="Security\900009 Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\SOS_900009 Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\900010 Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\900011 Consultor Administrador.sql" />
+    <Build Include="Security\SOS_900011 Consultor Administrador.sql" />
+    <Build Include="Security\900012 Consultor Cajas.sql" />
+    <Build Include="Security\SOS_900012 Consultor Cajas.sql" />
+    <Build Include="Security\SOS_900003 Consultor Asesor Cartera.sql" />
+    <Build Include="Security\SOS_900003 Consultor Asesor Cartera_1.sql" />
+    <Build Include="Security\000100 Control.sql" />
+    <Build Include="Security\130001 Control General Rezagos.sql" />
+    <Build Include="Security\300001 Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\300002 Auxiliar Parametros Capitacion Vision Salud.sql" />
+    <Build Include="Security\300003 Auxiliar Parametros Incapacidades Vision Salud.sql" />
+    <Build Include="Security\300004 Auxiliar Parametros Notificaciones Vision Salud.sql" />
+    <Build Include="Security\310001 Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\310002 Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310003 Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310004 Consultor Salud.sql" />
+    <Build Include="Security\100006 Tecnico de Operaciones.sql" />
+    <Build Include="Security\330001 Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\330004 Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\SOS_900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\900014 Consultor Auditor.sql" />
+    <Build Include="Security\SOS_900014 Consultor Auditor.sql" />
+    <Build Include="Security\Analistas.sql" />
+    <Build Include="Security\SOS_Analistas.sql" />
+    <Build Include="Security\X440.sql" />
+    <Build Include="Security\200100 Analistas.sql" />
+    <Build Include="Security\sosservicios.sql" />
+    <Build Include="Security\500002 Optimizador Base de Datos.sql" />
+    <Build Include="Security\SOS_sqlscript.sql" />
+    <Build Include="Security\SOS_700001 Administrador Cartera Pac Desarrollo.sql" />
+    <Build Include="Security\SqlCertPlanillas.sql" />
+    <Build Include="Security\SOS_900010 Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\SOS_900010 Consultor Administrativo Privilegiado_1.sql" />
+    <Build Include="Security\970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\970002 Administrador Alarmas Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970002 Administrador Alarmas Servicio al Cliente.sql" />
+    <Build Include="Security\Aportantes Web.sql" />
+    <Build Include="Security\970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\SOS_970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\600015 Coordinador Parametros Cartera Pos y Pac.sql" />
+    <Build Include="Security\200111 Auditor.sql" />
+    <Build Include="Security\310018 Auditor Salud Central.sql" />
+    <Build Include="Security\cms_webusr.sql" />
+    <Build Include="Security\cms_webusr_1.sql" />
+    <Build Include="Security\QPConsultores.sql" />
+    <Build Include="Security\SOS_qphra.sql" />
+    <Build Include="Security\980006 Administrador Planeacion Gestion IT.sql" />
+    <Build Include="Security\SOS_980006 Administrador Planeacion Gestion IT.sql" />
+    <Build Include="Security\portal_webusr.sql" />
+    <Build Include="Security\portal_webusr_1.sql" />
+    <Build Include="Security\SOS_PLANEACION Y CALIDAD.sql" />
+    <Build Include="Security\Apoyo_Seit.sql" />
+    <Build Include="Security\980002 Analista Gestion IT.sql" />
+    <Build Include="Security\SOS_980002 Analista Gestion IT.sql" />
+    <Build Include="Security\TecnicosBasesDatos.sql" />
+    <Build Include="Security\SOS_980001 Administrador Gestion IT.sql" />
+    <Build Include="Security\SOS_980005 Administrador Salud Gestion IT.sql" />
+    <Build Include="Security\SOS_910001 Operador Procesos.sql" />
+    <Build Include="Security\SOS_910001 Operador Procesos_1.sql" />
+    <Build Include="Security\geniarhrt.sql" />
+    <Build Include="Security\geniarhrt_1.sql" />
+    <Build Include="Security\suit_webusr.sql" />
+    <Build Include="Security\suit_webusr_1.sql" />
+    <Build Include="Security\SOS_arusbd01.sql" />
+    <Build Include="Security\SOS_arusbd01_1.sql" />
+    <Build Include="Security\quick_webusr.sql" />
+    <Build Include="Security\quick_webusr_1.sql" />
+    <Build Include="Security\fe_webusr.sql" />
+    <Build Include="Security\fe_webusr_1.sql" />
+    <Build Include="Security\seit.sql" />
+    <Build Include="Security\seit_1.sql" />
+    <Build Include="Security\SOS_gerniarwva.sql" />
+    <Build Include="Security\SOS_gerniarwva_1.sql" />
+    <Build Include="Security\SOS_qvisionjpv.sql" />
+    <Build Include="Security\SOS_qvisionjpv_1.sql" />
+    <Build Include="Security\cartera_webusr.sql" />
+    <Build Include="Security\cartera_webusr_1.sql" />
+    <Build Include="Security\sqlprod.sql" />
+    <Build Include="Security\SOS_sqlprod.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\sp_Num2Let.sql" />
+    <Build Include="dbo\Functions\fnCalculaFechaFinalPeriodo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaDeduccionesImpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarCuentasBeneficiariosConceptosPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\SpConsultalogBeneficiariosXLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerCriteriosLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpActualizaEstadoLiquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarta30DiasPac.sql" />
+    <Build Include="dbo\Stored Procedures\SpActualizaEstadoEstadoCuentaManual.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpDesaplicarNotaCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerPromotoresInformesGestion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpProcesaEstadoCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarEstadosCuentaConceptosPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarteraXEdades.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerPromotores.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGeneracionArchivoPagoACHPSE.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaPromotores.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpGrabarNotaCreditoCastigo.sql" />
+    <Build Include="dbo\Stored Procedures\spPTLAdicionaRegistrosImpresionEstadosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\castigarcartera02.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spRegistrarHistoricoEstadoLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spPTLConsultaNumeroCuentaXEmpleador.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsNotasProximoPeriodo.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCertificados.sql" />
+    <Build Include="dbo\Stored Procedures\spBuscarliqudacionanulada.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MANT_Indices_bdCarteraPac.sql" />
+    <Build Include="dbo\Stored Procedures\spFinalizarProcesoCarteraPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerNombrePromotor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spBuscaPromotorxRazonSocial.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerCamposCriterioMejorado.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraerBeneficiariosCuentasManualesMayorPeriodo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerContratosResponsableEstadoCuentaManual.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsEstadisticoFacturacionReal.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerPromotoresPacSedes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerBeneficiariosXDescuento.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpGrabarPromotoresSedes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpDesafiliarContratosMoraPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsDesafiliadosPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spRegistrarLogLiquidacionesContratosPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarAsociacionSedesXPromotor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spInicializaCursorImpresionEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Mant_DBReindexCarteraPac.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerValorIva.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MANT_DBDEFRAG_BDCarteraPac.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsSaldosFavorxcontrato.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarteraVencida.sql" />
+    <Build Include="dbo\Stored Procedures\spPlanoCambioTarifaPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaPagos.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsSaldosFavorxEmpleador.sql" />
+    <Build Include="dbo\Stored Procedures\SpDesaplicarPago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spextraccioncontratossinestadocuentainicial.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarteraJuridicoPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultarPeriodosLiquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaPagos.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosDebitosAplicadosXPago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsNovedadCambioTarifa.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerPeriodicidades.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spExportaDetalleContratosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsRelacionEstadosCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spPTLConsultarEstadoCuentaImpresionXEmpleadorCabecera.sql" />
+    <Build Include="dbo\Stored Procedures\SpLiquidacionFinalizada.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpGrabarPagos.sql" />
+    <Build Include="dbo\Stored Procedures\spPTLConsultarEstadoCuentaImpresionXEmpleadorConceptos.sql" />
+    <Build Include="dbo\Stored Procedures\SpDetalleaplicacionpago.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosDebitosAplicadosXSucursal.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPTLConsultarEstadoCuentaImpresionXEmpleadorDetalle.sql" />
+    <Build Include="dbo\Stored Procedures\SpConsultaSaldoContrato.sql" />
+    <Build Include="dbo\Stored Procedures\spcr5EjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spGrabarDescuentoXBeneficiario.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaSaldoResponsablePago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCalcularDatosFExNotaPAC.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerInformacionBeneficiariosXContrato.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultarTiposAplicacionNotas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpConsultaContratosNotasReintegro.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaDocumentosCreditoDesaplicados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGrabarNotaCreditoFE.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraerInformacionBeneficiariosXContratoNotaReintegro.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoPropal.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraerInformacionBeneficiariosXNota.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoIngenioManuelita.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spObtenerInfoPeriodoLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarBeneficiariosXNotaReintegro.sql" />
+    <Build Include="dbo\Stored Procedures\spcr0EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpActivaContratosSuspendidosXMora.sql" />
+    <Build Include="dbo\Stored Procedures\spGeneracionArchivoPagoATH.sql" />
+    <Build Include="dbo\Stored Procedures\spcr5EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpSuspencionContratosXMoraPac.sql" />
+    <Build Include="dbo\Stored Procedures\spcr6EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr7EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoIngenioProvidencia.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerResponsablesXDescuento.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spActualizaSaldoResponsablePago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpDesaplicarNotaCreditoReintegro.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoComfandi.sql" />
+    <Build Include="dbo\Stored Procedures\spActualizaSaldoContrato.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpConsultaDatosContratosReintegroReporte.sql" />
+    <Build Include="dbo\Stored Procedures\SpConsultaAportanteNoExistenteCarteraPacEnPOS.sql" />
+    <Build Include="dbo\Stored Procedures\spCastigarCartera.sql" />
+    <Build Include="dbo\Stored Procedures\spMensajeRespuestaLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaDocumentosCreditoAplicados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoFode.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarteraCastigar.sql" />
+    <Build Include="dbo\Stored Procedures\spTraeEstructuraLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaNotasCredito.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaContratosNotaDebitoPacFEAportante.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaSucursalesPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpDesaplicarNotaCreditoREI.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGrabarNotaDebitoFE.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutarLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spcr8EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGrabarBeneficiariosXNotaFE.sql" />
+    <Build Include="dbo\Stored Procedures\SpConsultaSaldoContratoAnterior.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaSaldoResponsablePagoAnterior.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spExtraccionCartasAfiliadosaDesafiliarxMora.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoFodePalmira.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutarLiquidacionPBSPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spPlanoSintracarcol.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoGrupoCarvajal.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerDebitosXPagosXResponsable.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutarLiquidacionPACPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsEstadisticoFacturacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaSaldoResponsablePagoNuevo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr1EjecutaConsultaNotasCredito.sql" />
+    <Build Include="dbo\Stored Procedures\SpActualizarSaldosEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpConsultaContratosNotaDebitoPacAportante.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerSucursalesXDiasMora.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr1EjecutaConsultaNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCrearProcesoCarteraPAC.sql" />
+    <Build Include="dbo\Stored Procedures\spCr1EjecutaConsultaPagos.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerParametrosProgramacionCarteraPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr1EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCalcularConsecutivoParaEstadoCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsNotasContablesXBeneficiario.sql" />
+    <Build Include="dbo\Stored Procedures\spCr6EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr2EjecutaConsultaNotasCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEliminarEstadoCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spFormatoDecimal.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr2EjecutaConsultaNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spContratosAntesDeLiquidar.sql" />
+    <Build Include="dbo\Stored Procedures\spExtraccionRetirosPlanes.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCertificadosRetencion.sql" />
+    <Build Include="dbo\Stored Procedures\spCr2EjecutaConsultaPagos.sql" />
+    <Build Include="dbo\Stored Procedures\spInsertarYActualizarBeneficiariosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spCr2EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spInsertarYActualizarResponsablesDePago.sql" />
+    <Build Include="dbo\Stored Procedures\spCr3EjecutaConsultaNotasCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spInsertarConceptosLiquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spMallaLiquidacionPac.sql" />
+    <Build Include="dbo\Stored Procedures\spCr3EjecutaConsultaNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spInsertarOActualizarCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spCr3EjecutaConsultaPagos.sql" />
+    <Build Include="dbo\Stored Procedures\spGestionarDetallesDeCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spCr3EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spInsertarConceptosDeBeneficiarios.sql" />
+    <Build Include="dbo\Stored Procedures\spCr4EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr5EjecutaConsultaPagosManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGuardarInconsistenciasxNotasPAC.sql" />
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaCuentasManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spObtenerFacturaPorNumero.sql" />
+    <Build Include="dbo\Stored Procedures\spRCCnsltaLiqRadRecobro.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaDocumentosCreditoXaplicar.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spRCCnsLiqRadRcbroxEntddRcbrr.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spRCCnsltaLiqRecobrosEntRclmnte.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaLiquidaciones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spValidarResolucionVigenteDIAN.sql" />
+    <Build Include="dbo\Stored Procedures\SpLiquidacionPrevia.sql" />
+    <Build Include="dbo\Stored Procedures\spRCCnsltaLiqRecobrosEntRecob.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaPromotores.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCreaEstadosCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spRCCnsltaLiqRecobrosPcnte.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaNotasCreditoAplicadas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultarDetallesFacturasPAC.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaSucursalesXPromotores.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosCreditoAplicados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaConsultaSucursalesLIquidar.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoAcuavalle.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsSaldosFavorCreacionTerceros.sql" />
+    <Build Include="dbo\Stored Procedures\spcr1EjecutaDocumentosCreditoAplicados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCreaContratosEstadosCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spPasoSuspensionxMoraPAC.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaCuentasManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaNotasResponsablePago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCreaBeneficiariosContratosEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaDocumentosCreditoXaplicar.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerContratosxDocumentoDebito.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaInstruccionCarteraPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerPeriodoLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spExtraccionNotasPagosCarteraCastigada.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spObtenerConceptosLiquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spCreaConceptosBeneficiariosContratosEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spExtraccionSaldosFavorContratosDesafiliados.sql" />
+    <Build Include="dbo\Stored Procedures\SpCalculaExtemporanidadXContrato.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaLiquidaciones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCreaConceptosEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoFontragrasas.sql" />
+    <Build Include="dbo\Stored Procedures\sp_dbaMantExpress_bdCarteraPac.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaPromotores.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spActualizaEncabezadoEstadosCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoSos.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPlanoIndulicores.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaDocumentosCreditoAplicados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaPagoacambiar.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraeParametrosBasicosCarteraPac.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaConsultaCuentasManuales.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarPagoManual.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerEstadoNotas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spQuitarclaseaportante.sql" />
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaConsultaDocumentosCreditoXaplicar.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGrabarNotaSaldoaFavor.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsNotasContablesDian.sql" />
+    <Build Include="dbo\Stored Procedures\spTarificacionLLenaInformacionBeneficiario.sql" />
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsEstadisticoDIAN.sql" />
+    <Build Include="dbo\Stored Procedures\spTarificacionActualizaGrupoXBeneficiarios.sql" />
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaConsultaLiquidaciones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spAdicionaRegistrosImpresionEstadosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spTarificacionCalculaTarifaXBeneficiario.sql" />
+    <Build Include="dbo\Stored Procedures\spcr3EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spQW_InformeCarteraPacFechaRecaudo.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spcr4EjecutaConsultaCuentasManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpActualizaEstadoNota.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsLiquidacionPrevia.sql" />
+    <Build Include="dbo\Stored Procedures\spcr4EjecutaConsultaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraerConceptosXTipoMovimiento.sql" />
+    <Build Include="dbo\Stored Procedures\p_sizetables.sql" />
+    <Build Include="dbo\Stored Procedures\spTarificacionDepuraGrupoXModeloBeneficiarios.sql" />
+    <Build Include="dbo\Stored Procedures\spcr5EjecutaConsultaCuentasManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spIniciarProcesoCarteraPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sizetables_diario.sql" />
+    <Build Include="dbo\Stored Procedures\spCr4EjecutaConsultaNotasCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsPacSuspendidos.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerEstadosCuentaManual.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr4EjecutaConsultaNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spRegistrarLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsPacActivados.sql" />
+    <Build Include="dbo\Stored Procedures\spcr4EjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGuardarInconsistenciasxFacturasPAC.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarFechaImpresionEstadoCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\SpImprimirNota.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsPagosAplicadosxusuario.sql" />
+    <Build Include="dbo\Stored Procedures\spQW_EjecutaCargueFacturaPac.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarFechaImpresionEstadoCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaNotas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpConsultaContratosNotasDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsImpresionEstadosCuenta.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaNotas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCalcularSaldosResponsablesDePago.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsImpresionEstadosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\SpConsultaContratosEstadoCuenta.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spObtenerEstadosCuentaYContratos.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarNotaCredito.sql" />
+    <Build Include="dbo\Stored Procedures\spPlanoMunicipioCaliSuc2.sql" />
+    <Build Include="dbo\Stored Procedures\spObtenerBeneficiariosAFacturar.sql" />
+    <Build Include="dbo\Stored Procedures\Mant_DBREINDEX_Automatico.sql" />
+    <Build Include="dbo\Stored Procedures\sp_ListarIndices.sql" />
+    <Build Include="dbo\Stored Procedures\spObtenerCobranzas.sql" />
+    <Build Include="dbo\Stored Procedures\SpTraerContratosResponsableXPlan.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Mant_DBDEFRAG_Automatico.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarta30DiasPacAnterior.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGenerarReliquidacionDeFacturas.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarNotaDebito.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaReintegros.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaCuentasManuales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spQW_CrearFacturasPac.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerContratosResponsable.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPTL_EjecutaCertificadosRetencion.sql" />
+    <Build Include="dbo\Stored Procedures\spObtenerFacturaPorPeriodoResponsable.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosDebitoXContrato.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGenerarReliquidacionDeFacturasPorContrato.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosCreditoXDebito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spGenerarReliquidacionDeFacturasPorPlanYContrato.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarCriteriosLiquidacionPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaDocumentosDebitoXContrato.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaDocumentosDebitoXResponsablePago.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpGrabarNotaCreditoImpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarEstadosCuentaPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarReintegro.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spCr1EjecutaConsultaNotasCreditoimpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaDetalleCuentaManual.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTarificaLiquidacionPrevia.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultarLogLiquidacionPLUSFase2.sql" />
+    <Build Include="dbo\Stored Procedures\spCr2EjecutaConsultaNotasCreditoImpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaImpresionXdocumento.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarEstadoCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spCr3EjecutaConsultaNotasCreditoimpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsNotasContables.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarEstadosCuentaContratosPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spCr4EjecutaConsultaNotasCreditoimpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsDetEmpleador.sql" />
+    <Build Include="dbo\Stored Procedures\SpImprimirNotaImpuestos.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarCuentasContratosBeneficiariosPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spcr2EjecutaDocumentosCreditoImpuestosAplicados.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaSucursalesLIquidar.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerConceptosLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerLiquidaciones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCertificados_anterior.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaDocumentosCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerValoresNotaDebitoxCotizante.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaDocumentosCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spControladorEstadoCuentaPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerDocumentosDebitoXSucursal.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaPeriodosLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerValoresFacturadosxBeneficiario.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpAplicarNotaCredito.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPTLEjecutaCarteraVencida.sql" />
+    <Build Include="dbo\Stored Procedures\spPoblarTablasPlanesPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spPlanoMunicipioCali.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConslogLiquidaciones.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsDetEmpleadorAnterior.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spEjecutaConsCarteraCorriente.sql" />
+    <Build Include="dbo\Stored Procedures\SpGrabarAsociacionConceptos.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpTraerInformacionBeneficiariosXContratoNota.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaImpresionEstadosCuentaManual.sql" />
+    <Build Include="dbo\Stored Procedures\spSCTraerParametroGeneral.sql" />
+    <Build Include="dbo\Stored Procedures\spRegistrarInfoFEPLUS.sql" />
+    <Build Include="dbo\Stored Procedures\spEjecutaConsultaLiquidaciones.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpGrabarBeneficiariosXNota.sql" />
+    <Build Include="dbo\Stored Procedures\spGrabarLiquidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerSucursalesXGrupo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\User Defined Types\udtApellido.sql" />
+    <Build Include="dbo\User Defined Types\udtCiudad.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigo.sql" />
+    <Build Include="dbo\User Defined Types\udtConsecutivo.sql" />
+    <Build Include="dbo\User Defined Types\udtDescripcion.sql" />
+    <Build Include="dbo\User Defined Types\udtDireccion.sql" />
+    <Build Include="dbo\User Defined Types\udtEmail.sql" />
+    <Build Include="dbo\User Defined Types\udtLogico.sql" />
+    <Build Include="dbo\User Defined Types\udtUsuario.sql" />
+    <Build Include="dbo\User Defined Types\udtObservacion.sql" />
+    <Build Include="dbo\User Defined Types\udtValorPequeno.sql" />
+    <Build Include="dbo\User Defined Types\udtValorGrande.sql" />
+    <Build Include="dbo\User Defined Types\udtPeriodo.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtValorDecimales.sql" />
+    <Build Include="dbo\User Defined Types\udtNombre.sql" />
+    <Build Include="dbo\User Defined Types\udtNombreObjeto.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacionLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtSede.sql" />
+    <Build Include="dbo\User Defined Types\udtSexo.sql" />
+    <Build Include="dbo\User Defined Types\udtTelefono.sql" />
+    <Build Include="dbo\User Defined Types\udtTipoFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtTipoIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumentoLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoIps.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDiagnostico.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoPrestacion.sql" />
+    <Build Include="dbo\User Defined Types\udtnumeroidentificacion2.sql" />
+    <Build Include="Security\Consulta Parametros Afiliacion_1.sql" />
+    <Build Include="Security\MSReplPAL_13_3_1.sql" />
+    <Build Include="Security\MSReplPAL_13_4_1.sql" />
+    <Build Include="Security\MStran_PAL_role_1.sql" />
+    <Build Include="Security\SOS_700001 Administrador Cartera Pac Desarrollo_1.sql" />
+    <Build Include="Security\SOS_arusbd01_2.sql" />
+    <Build Include="dbo\Sequences\seqNumeroEstadoCuentaDIAN.sql" />
+    <Build Include="dbo\Sequences\SeqNumeroNotasDebito.sql" />
+    <Build Include="dbo\Sequences\SeqNumeroNotasSaldoaFavor.sql" />
+    <Build Include="dbo\Sequences\SeqNumeroNotasCredito.sql" />
   </ItemGroup>
 </Project>

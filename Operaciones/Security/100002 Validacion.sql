@@ -1,0 +1,2 @@
+﻿CREATE USER [100002 Validacion] FOR LOGIN [SOS\100002 Validacion];
+

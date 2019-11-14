@@ -1,0 +1,7 @@
+﻿CREATE ROLE [Salud]
+    AUTHORIZATION [dbo];
+
+
+GO
+ALTER ROLE [Salud] ADD MEMBER [200202 Salud];
+

@@ -1,0 +1,2 @@
+﻿CREATE USER [200202 Salud] FOR LOGIN [SOS\200202 Salud];
+
