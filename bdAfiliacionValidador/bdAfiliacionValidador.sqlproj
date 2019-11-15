@@ -1,0 +1,1046 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>bdAfiliacionValidador</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7ebc5feb-8325-4e3f-a0f1-e44e1f61851c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>bdAfiliacionValidador</RootNamespace>
+    <AssemblyName>bdAfiliacionValidador</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Defaults\" />
+    <Folder Include="Storage\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\tbAgrupadoresParametrosProgramacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbBarrios_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposOficina.sql" />
+    <Build Include="dbo\Tables\tbParametrosProgramacion.sql" />
+    <Build Include="dbo\Tables\tbModeloExtraccionCondiciones_proceso.sql" />
+    <Build Include="dbo\Tables\tbItemsBonificacion.sql" />
+    <Build Include="dbo\Tables\tbRelAgrupacionxParametrosProgramacion.sql" />
+    <Build Include="dbo\Tables\tbResolucionesDIAN.sql" />
+    <Build Include="dbo\Tables\tbVigenciasBeneficiariosValidador.sql" />
+    <Build Include="dbo\Tables\tbResolucionesDIAN_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbSedes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCargos.sql" />
+    <Build Include="dbo\Tables\tbTiposOficina_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbProcesos.sql" />
+    <Build Include="dbo\Tables\tbItemsBonificacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbNewItemCapitacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbMotivoOrdenEspecial.sql" />
+    <Build Include="dbo\Tables\tbMotivoOrdenEspecial_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbSexos.sql" />
+    <Build Include="dbo\Tables\tbEapb.sql" />
+    <Build Include="dbo\Tables\tbCargos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbZonas.sql" />
+    <Build Include="dbo\Tables\tbPlanes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDetalleEapb_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbModeloConveniosCapitacion.sql" />
+    <Build Include="dbo\Tables\tbSexos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCiudades.sql" />
+    <Build Include="dbo\Tables\tbOrigenesNovedad.sql" />
+    <Build Include="dbo\Tables\tbZonas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCausasDerechoValidador.sql" />
+    <Build Include="dbo\Tables\tbTiposPlan.sql" />
+    <Build Include="dbo\Tables\tbCamposHistoricos.sql" />
+    <Build Include="dbo\Tables\tbDetModeloConveniosCapitacion.sql" />
+    <Build Include="dbo\Tables\tbSucursalesAportante.sql" />
+    <Build Include="dbo\Tables\TbMatrizDerechosValidador_at.sql" />
+    <Build Include="dbo\Tables\tbConvenioxCapitacion.sql" />
+    <Build Include="dbo\Tables\tbmontos.sql" />
+    <Build Include="dbo\Tables\tbCiudades_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbOutsourcings_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDatosContactosxSucursalAportante.sql" />
+    <Build Include="dbo\Tables\tbTiposPlan_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCausasHistoricoEstadosBeneficiarios.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTextosValidador.sql" />
+    <Build Include="dbo\Tables\tbEmpleadores.sql" />
+    <Build Include="dbo\Tables\tbTiposAfiliado.sql" />
+    <Build Include="dbo\Tables\tbNivelesDiscapacidad.sql" />
+    <Build Include="dbo\Tables\tbClasesAportantes.sql" />
+    <Build Include="dbo\Tables\tbOficinasCertificados.sql" />
+    <Build Include="dbo\Tables\tbDocumentosSoportesxAfiliadoValidador.sql" />
+    <Build Include="dbo\Tables\tbNivelesDiscapacidad_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposTopePlanes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposAfiliado_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstadosDerechoValidador.sql" />
+    <Build Include="dbo\Tables\tbHistoricoBeneficiariosvalidador.sql" />
+    <Build Include="dbo\Tables\tbTiposDiscapacidad.sql" />
+    <Build Include="dbo\Tables\tbClasesAportantes_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDetProcesos.sql" />
+    <Build Include="dbo\Tables\tbTPSPeriodicidadesModelos.sql" />
+    <Build Include="dbo\Tables\tbTiposDiscapacidad_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTablaParametros.sql" />
+    <Build Include="dbo\Tables\tbTiposAportante.sql" />
+    <Build Include="dbo\Tables\tbAfiliadosValidador.sql" />
+    <Build Include="dbo\Tables\tbTecnicasLiquidacion.sql" />
+    <Build Include="dbo\Tables\tbDocumentosAfiliacionValidador.sql" />
+    <Build Include="dbo\Tables\tbActuarioCapitacionValidador.sql" />
+    <Build Include="dbo\Tables\tbTecnicasLiquidacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEmpresas.sql" />
+    <Build Include="dbo\Tables\tbDepartamentos.sql" />
+    <Build Include="dbo\Tables\tbTPSDetModelosTopesAgrupadoresCups.sql" />
+    <Build Include="dbo\Tables\tbPersonas.sql" />
+    <Build Include="dbo\Tables\tmpFechaEstadosDerecho.sql" />
+    <Build Include="dbo\Tables\tmpFechaEstadosDerechoFinal.sql" />
+    <Build Include="dbo\Tables\tbBeneficiariosValidadorActualizar.sql" />
+    <Build Include="dbo\Tables\tmpFechaEstadosDerechoFinalTemporal.sql" />
+    <Build Include="dbo\Tables\tbTiposAportante_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRelacionPosCValidador.sql" />
+    <Build Include="dbo\Tables\tbBeneficiariosFormularioValidador.sql" />
+    <Build Include="dbo\Tables\tbAportanteValidador.sql" />
+    <Build Include="dbo\Tables\tbDepartamentos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTPSPeriodicidadesModelos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRedEmpresarial.sql" />
+    <Build Include="dbo\Tables\tbTiposCobranza.sql" />
+    <Build Include="dbo\Tables\tbTiposServicio.sql" />
+    <Build Include="dbo\Tables\tbBeneficiariosValidador.sql" />
+    <Build Include="dbo\Tables\tbEntidades.sql" />
+    <Build Include="dbo\Tables\tbTiposServicio_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbConvenioxCapitacion_BKUP.sql" />
+    <Build Include="dbo\Tables\tbDetRedEmpresarial.sql" />
+    <Build Include="dbo\Tables\tbPeriodicidad_transmision.sql" />
+    <Build Include="dbo\Tables\tbTiposCobranza_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbIPSPrimarias_vigencias.sql" />
+    <Build Include="dbo\Tables\tbCobranzasValidador.sql" />
+    <Build Include="dbo\Tables\tbEntidades_Vigencias_isis.sql" />
+    <Build Include="dbo\Tables\tbConceptosTextos.sql" />
+    <Build Include="dbo\Tables\tbTiposContrato.sql" />
+    <Build Include="dbo\Tables\tbFechasCapitacion.sql" />
+    <Build Include="dbo\Tables\tbContratosValidador.sql" />
+    <Build Include="dbo\Tables\tbEstadosCiviles.sql" />
+    <Build Include="dbo\Tables\tbEscenarios_procesoValidador.sql" />
+    <Build Include="dbo\Tables\tbConceptosTextos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposContrato_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoAportanteValidador.sql" />
+    <Build Include="dbo\Tables\tbEstadosCiviles_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiemposAfiliacion.sql" />
+    <Build Include="dbo\Tables\tbEscenarios_proceso_borra_20050527.sql" />
+    <Build Include="dbo\Tables\tbPlanes.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposIdentificacion.sql" />
+    <Build Include="dbo\Tables\tbCafam.sql" />
+    <Build Include="dbo\Tables\rolesafiliacion.sql" />
+    <Build Include="dbo\Tables\tbTiposCotizante.sql" />
+    <Build Include="dbo\Tables\tbTiposContactosEmpresariales.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresTiposIdentificacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbCafam_backup.sql" />
+    <Build Include="dbo\Tables\rolesn.sql" />
+    <Build Include="dbo\Tables\tbHistoricoCobranzasvalidador.sql" />
+    <Build Include="dbo\Tables\tmp_cafam.sql" />
+    <Build Include="dbo\Tables\usern.sql" />
+    <Build Include="dbo\Tables\tbTiposContactosEmpresariales_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEstratosSocioEconomicos.sql" />
+    <Build Include="dbo\Tables\tbAutorizacionesPac.sql" />
+    <Build Include="dbo\Tables\tbContactosEmpresariales.sql" />
+    <Build Include="dbo\Tables\tbModelos.sql" />
+    <Build Include="dbo\Tables\tbTiposCotizante_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbHistoricoContratosvalidador.sql" />
+    <Build Include="dbo\Tables\tbGrupoPoblacional.sql" />
+    <Build Include="dbo\Tables\tbEstratosSocioEconomicos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTecnicasBonificacion.sql" />
+    <Build Include="dbo\Tables\tbTiposEntidad.sql" />
+    <Build Include="dbo\Tables\tbComunas.sql" />
+    <Build Include="dbo\Tables\tbHistoricodetmodelotextosvalidador.sql" />
+    <Build Include="dbo\Tables\tbGrupoPoblacional_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbInformacionAdicionalCobranza.sql" />
+    <Build Include="dbo\Tables\tbItemCapitacion.sql" />
+    <Build Include="dbo\Tables\tbComunas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tmpContratosProcesar_20140603.sql" />
+    <Build Include="dbo\Tables\tbVinculadosEntidades.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTopesCopago.sql" />
+    <Build Include="dbo\Tables\tbTiposEntidad_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbMatrizCapitacionValidador.sql" />
+    <Build Include="dbo\Tables\tbGruposPoblacionesAfiliados.sql" />
+    <Build Include="dbo\Tables\tbParentescos.sql" />
+    <Build Include="dbo\Tables\tbItemCapitacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposTopePlanes.sql" />
+    <Build Include="dbo\Tables\tbTiposIdentificacion.sql" />
+    <Build Include="dbo\Tables\tbClasificacionGeografica.sql" />
+    <Build Include="dbo\Tables\tbClasificacionGeografica_Vigencias.sql" />
+    <Build Include="dbo\Tables\TbMatrizDerechosValidador.sql" />
+    <Build Include="dbo\Tables\tbTablaParametroValidacion.sql" />
+    <Build Include="dbo\Tables\tbParentescos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbMarcasEspeciales.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTopesEventosQx.sql" />
+    <Build Include="dbo\Tables\tbModeloCapitacionExtraccionDetalle.sql" />
+    <Build Include="dbo\Tables\tbTiposIdentificacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbEntidades_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRangosSalariales.sql" />
+    <Build Include="dbo\Tables\tbMarcasEspeciales_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTopesHabitacion.sql" />
+    <Build Include="dbo\Tables\tbTiposUnidades.sql" />
+    <Build Include="dbo\Tables\tbRangosSalariales_Vigencias.sql" />
+    <Build Include="dbo\Tables\prseti.sql" />
+    <Build Include="dbo\Tables\tbactividadesEconomicas.sql" />
+    <Build Include="dbo\Tables\tbDetModeloTopesPatologias.sql" />
+    <Build Include="dbo\Tables\tbMarcasProductosxSucursal.sql" />
+    <Build Include="dbo\Tables\tbControlTransmision.sql" />
+    <Build Include="dbo\Tables\tbOficinas.sql" />
+    <Build Include="dbo\Tables\tbSalariosMinimos.sql" />
+    <Build Include="dbo\Tables\tbdetproductos20111004.sql" />
+    <Build Include="dbo\Tables\tbdetmodeloTecnicasBonificacion20111004.sql" />
+    <Build Include="dbo\Tables\tbActividadesEconomicas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbRelAgrupacionxTiposIdentificacion.sql" />
+    <Build Include="dbo\Tables\tbProductos.sql" />
+    <Build Include="dbo\Tables\tbOficinas_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbSalariosMinimos_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposMarcasXOficina.sql" />
+    <Build Include="dbo\Tables\tbTiposMarcasOficina_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbTiposMarcasOficina.sql" />
+    <Build Include="dbo\Tables\tbBarrios.sql" />
+    <Build Include="dbo\Tables\tbRelAgrupacionxTiposIdentificacion_Vigencias.sql" />
+    <Build Include="dbo\Tables\tbDetProductos.sql" />
+    <Build Include="dbo\Tables\tbSedes.sql" />
+    <Build Include="dbo\Tables\tbAgrupadoresParametrosProgramacion.sql" />
+    <Build Include="dbo\Defaults\dflts_N.sql" />
+    <Build Include="dbo\Defaults\dflts_S.sql" />
+    <Build Include="Storage\FG_INDEXES.sql" />
+    <Build Include="Security\Prestaciones Economicas.sql" />
+    <Build Include="Security\vafss_role.sql" />
+    <Build Include="Security\Consultor Administrativo.sql" />
+    <Build Include="Security\Consultor Recobros.sql" />
+    <Build Include="Security\Administrador Notificaciones Atep SOA.sql" />
+    <Build Include="Security\Consultor Auxiliar Sedes Red Salud.sql" />
+    <Build Include="Security\Aprendiz Red de Servicios Red Salud.sql" />
+    <Build Include="Security\Coordinador Parametros RedSalud.sql" />
+    <Build Include="Security\Consultor Cuentas Medicas Red Salud.sql" />
+    <Build Include="Security\Auditor Interno Red Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Red Salud.sql" />
+    <Build Include="Security\MSReplPAL_10_30.sql" />
+    <Build Include="Security\Gestor de Alistamiento.sql" />
+    <Build Include="Security\Auxiliar Contable.sql" />
+    <Build Include="Security\Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\Glosas Devoluciones.sql" />
+    <Build Include="Security\Consultor Asesor Cartera.sql" />
+    <Build Include="Security\Consultor Asesor Comercial.sql" />
+    <Build Include="Security\Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\portal_rol.sql" />
+    <Build Include="Security\AdminScripts_Cambios.sql" />
+    <Build Include="Security\autsalud_rol.sql" />
+    <Build Include="Security\Auditor Autorizador CNA.sql" />
+    <Build Include="Security\910001 Operador Procesos.sql" />
+    <Build Include="Security\Auditor Tesoreria.sql" />
+    <Build Include="Security\Administrador Cartera Pac.sql" />
+    <Build Include="Security\Auditoria Interna.sql" />
+    <Build Include="Security\Auxiliar Cartera Pac.sql" />
+    <Build Include="Security\Consultor Cartera Pac.sql" />
+    <Build Include="Security\Consultor Parametros Cartera Pac.sql" />
+    <Build Include="Security\Coordinador Cartera Pac.sql" />
+    <Build Include="Security\Coordinador Parametros Cartera Pac.sql" />
+    <Build Include="Security\Jefatura  Cartera.sql" />
+    <Build Include="Security\Jefatura Cartera.sql" />
+    <Build Include="Security\Desarrollo.sql" />
+    <Build Include="Security\Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\Consultor de Prestaciones Medicas.sql" />
+    <Build Include="Security\Auxiliar Tesoreria Prestaciones Medicas.sql" />
+    <Build Include="Security\Auditor de Prestaciones Medicas.sql" />
+    <Build Include="Security\Coordinador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Analista Seguros Asistenciales.sql" />
+    <Build Include="Security\Consultor Notificaciones.sql" />
+    <Build Include="Security\Auditor Central Notificaciones.sql" />
+    <Build Include="Security\Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Capitacion Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Cuentas Medicas Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Incapacidades Vision Salud.sql" />
+    <Build Include="Security\Auxiliar Parametros Notificaciones Vision Salud.sql" />
+    <Build Include="Security\Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\Auditor Salud.sql" />
+    <Build Include="Security\Consultor Salud.sql" />
+    <Build Include="Security\Administrador de Prestaciones Economicas.sql" />
+    <Build Include="Security\Inteligencia.sql" />
+    <Build Include="Security\Auxiliar de Cuentas Medicas.sql" />
+    <Build Include="Security\Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\Liquidador Facturas.sql" />
+    <Build Include="Security\Consultor de Cuentas Medicas.sql" />
+    <Build Include="Security\Autorizadora Notificacion.sql" />
+    <Build Include="Security\Audiorespuesta.sql" />
+    <Build Include="Security\Auxiliar Sipres Analista Notificaciones.sql" />
+    <Build Include="Security\Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\Auditor Interno de PVS.sql" />
+    <Build Include="Security\Auditor Interno de Recobros.sql" />
+    <Build Include="Security\Auditoria Interna Salud.sql" />
+    <Build Include="Security\Auxiliar de Glosas.sql" />
+    <Build Include="Security\webusr.sql" />
+    <Build Include="Security\Coordinador Parametros Recobro.sql" />
+    <Build Include="Security\Liquidador Recobros.sql" />
+    <Build Include="Security\Radicador Recobros.sql" />
+    <Build Include="Security\Auxiliar Cartera.sql" />
+    <Build Include="Security\Coordinador Juridico Notificaciones.sql" />
+    <Build Include="Security\Auxiliar Cartera Recobros.sql" />
+    <Build Include="Security\Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\Auxiliar Parametros Recobros PVS.sql" />
+    <Build Include="Security\Administrador Interface Contable.sql" />
+    <Build Include="Security\Interface Recaudos.sql" />
+    <Build Include="Security\Interface Nomina.sql" />
+    <Build Include="Security\Interface PORFIN.sql" />
+    <Build Include="Security\Interface Recobros.sql" />
+    <Build Include="Security\Analista Red Servicios.sql" />
+    <Build Include="Security\Consulta.sql" />
+    <Build Include="Security\Auxiliar Prestaciones Medicas y Validacion de Derechos.sql" />
+    <Build Include="Security\Auxiliar Parametros Convenios Vision Salud.sql" />
+    <Build Include="Security\Auxiliar de Prestaciones Centelsa.sql" />
+    <Build Include="Security\Consultor Administrador.sql" />
+    <Build Include="Security\Consultor Cuentas Medicas PVS.sql" />
+    <Build Include="Security\Consultor Auditor.sql" />
+    <Build Include="Security\Analistas.sql" />
+    <Build Include="Security\SOS_Analistas.sql" />
+    <Build Include="Security\Audio.sql" />
+    <Build Include="Security\Audio_1.sql" />
+    <Build Include="Security\300104 Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\300103 Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\300102 Coordinador de Prestaciones Economicas.sql" />
+    <Build Include="Security\300202 Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\330008 Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_330008 Auditor Interno de Cuentas Medicas.sql" />
+    <Build Include="Security\300002 Auxiliar Parametros Capitacion Vision Salud.sql" />
+    <Build Include="Security\SOS_300002 Auxiliar Parametros Capitacion Vision Salud.sql" />
+    <Build Include="Security\300003 Auxiliar Parametros Incapacidades Vision Salud.sql" />
+    <Build Include="Security\SOS_300003 Auxiliar Parametros Incapacidades Vision Salud.sql" />
+    <Build Include="Security\300005 Auxiliar Parametros Cuentas Medicas Vision Salud.sql" />
+    <Build Include="Security\SOS_300005 Auxiliar Parametros Cuentas Medicas Vision Salud.sql" />
+    <Build Include="Security\300004 Auxiliar Parametros Notificaciones Vision Salud.sql" />
+    <Build Include="Security\SOS_300004 Auxiliar Parametros Notificaciones Vision Salud.sql" />
+    <Build Include="Security\300604 Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\330004 Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_330004 Radicador de Cuentas Medicas.sql" />
+    <Build Include="Security\900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_900002 Consultor Servicio al Cliente.sql" />
+    <Build Include="Security\ipsoft01.sql" />
+    <Build Include="Security\300008 Auxiliar Parametros Convenios Vision Salud.sql" />
+    <Build Include="Security\120001 Administrador Interface Contable.sql" />
+    <Build Include="Security\SOS_120001 Administrador Interface Contable.sql" />
+    <Build Include="Security\120002 Interface Recaudos.sql" />
+    <Build Include="Security\SOS_120002 Interface Recaudos.sql" />
+    <Build Include="Security\120003 Interface Nomina.sql" />
+    <Build Include="Security\SOS_120003 Interface Nomina.sql" />
+    <Build Include="Security\120004 Interface PORFIN.sql" />
+    <Build Include="Security\SOS_120004 Interface PORFIN.sql" />
+    <Build Include="Security\120005 Interface Recobros.sql" />
+    <Build Include="Security\SOS_120005 Interface Recobros.sql" />
+    <Build Include="Security\310013 Analista Red Servicios.sql" />
+    <Build Include="Security\SOS_310013 Analista Red Servicios.sql" />
+    <Build Include="Security\310014 Auxiliar Prestaciones Medicas y Validacion de Derechos.sql" />
+    <Build Include="Security\SOS_310014 Auxiliar Prestaciones Medicas y Validacion de Derechos.sql" />
+    <Build Include="Security\Auditoria Informatica.sql" />
+    <Build Include="Security\SOS_Auditoria Informatica.sql" />
+    <Build Include="Security\SOS_310015 Auxiliar de Prestaciones Centelsa.sql" />
+    <Build Include="Security\SOS_310015 Auxiliar de Prestaciones Centelsa_1.sql" />
+    <Build Include="Security\900011 Consultor Administrador.sql" />
+    <Build Include="Security\SOS_900011 Consultor Administrador.sql" />
+    <Build Include="Security\300001 Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\SOS_300001 Coordinador Parametros Vision Salud.sql" />
+    <Build Include="Security\310002 Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\SOS_310002 Coordinador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310004 Consultor Salud.sql" />
+    <Build Include="Security\SOS_310004 Consultor Salud.sql" />
+    <Build Include="Security\310007 Analista Seguros Asistenciales.sql" />
+    <Build Include="Security\SOS_310007 Analista Seguros Asistenciales.sql" />
+    <Build Include="Security\310008 Auditor Salud.sql" />
+    <Build Include="Security\SOS_310008 Auditor Salud.sql" />
+    <Build Include="Security\320001 Administrador de Prestaciones Economicas.sql" />
+    <Build Include="Security\SOS_320001 Administrador de Prestaciones Economicas.sql" />
+    <Build Include="Security\320004 Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\SOS_320004 Consultor de Prestaciones Economicas.sql" />
+    <Build Include="Security\320003 Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\SOS_320003 Radicador de Prestaciones Economicas.sql" />
+    <Build Include="Security\310005 Auxiliar Tesoreria Prestaciones Medicas.sql" />
+    <Build Include="Security\SOS_310005 Auxiliar Tesoreria Prestaciones Medicas.sql" />
+    <Build Include="Security\310003 Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\SOS_310003 Validador de Prestaciones Medicas.sql" />
+    <Build Include="Security\310001 Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\SOS_310001 Auxiliar de Prestaciones Medicas.sql" />
+    <Build Include="Security\websos.sql" />
+    <Build Include="Security\websos_1.sql" />
+    <Build Include="Security\330001 Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_330001 Coordinador Cuentas Medicas.sql" />
+    <Build Include="Security\330002 Auxiliar de Cuentas Medicas.sql" />
+    <Build Include="Security\330007 Liquidador Facturas.sql" />
+    <Build Include="Security\SOS_330007 Liquidador Facturas.sql" />
+    <Build Include="Security\330003 Consultor de Cuentas Medicas.sql" />
+    <Build Include="Security\SOS_330003 Consultor de Cuentas Medicas.sql" />
+    <Build Include="Security\310009 Autorizadora Notificacion.sql" />
+    <Build Include="Security\SOS_310009 Autorizadora Notificacion.sql" />
+    <Build Include="Security\310010 Auxiliar Sipres Analista Notificaciones.sql" />
+    <Build Include="Security\SOS_310010 Auxiliar Sipres Analista Notificaciones.sql" />
+    <Build Include="Security\Provisiones.sql" />
+    <Build Include="Security\310011 Auditoria Interna Salud.sql" />
+    <Build Include="Security\SOS_310011 Auditoria Interna Salud.sql" />
+    <Build Include="Security\330012 Auxiliar de Glosas.sql" />
+    <Build Include="Security\AccesoLS.sql" />
+    <Build Include="Security\AccesoLS_1.sql" />
+    <Build Include="Security\340010 Auditor Interno de Recobros.sql" />
+    <Build Include="Security\340007 Coordinador Parametros Recobro.sql" />
+    <Build Include="Security\SOS_340007 Coordinador Parametros Recobro.sql" />
+    <Build Include="Security\340011 Liquidador Recobros.sql" />
+    <Build Include="Security\SOS_340011 Liquidador Recobros.sql" />
+    <Build Include="Security\340012 Radicador Recobros.sql" />
+    <Build Include="Security\340013 Auxiliar Cartera.sql" />
+    <Build Include="Security\310012 Coordinador Juridico Notificaciones.sql" />
+    <Build Include="Security\SOS_310012 Coordinador Juridico Notificaciones.sql" />
+    <Build Include="Security\SOS_300009 Consultor Cuentas Medicas PVS.sql" />
+    <Build Include="Security\900014 Consultor Auditor.sql" />
+    <Build Include="Security\SOS_900014 Consultor Auditor.sql" />
+    <Build Include="Security\pe_soa.sql" />
+    <Build Include="Security\pe_soa_1.sql" />
+    <Build Include="Security\SOS_BO_CNA.sql" />
+    <Build Include="Security\cna_webusr.sql" />
+    <Build Include="Security\CNA_WebUsr_1.sql" />
+    <Build Include="Security\AccesoRegistroInforme_Lectura.sql" />
+    <Build Include="Security\SOS_AccesoRegistroInforme_Lectura.sql" />
+    <Build Include="Security\310018 Auditor Salud Central.sql" />
+    <Build Include="Security\vafss_usr.sql" />
+    <Build Include="Security\vafss_usr_1.sql" />
+    <Build Include="Security\enigma.sql" />
+    <Build Include="Security\enigma_1.sql" />
+    <Build Include="Security\ServicioClientePortal.sql" />
+    <Build Include="Security\ServicioClientePortal_1.sql" />
+    <Build Include="Security\SOS_310007 Analista Seguros Asistenciales_1.sql" />
+    <Build Include="Security\SOS_310007 Analista Seguros Asistenciales_2.sql" />
+    <Build Include="Security\SOS_900009 Consultor Salud Privilegiado.sql" />
+    <Build Include="Security\SOS_900009 Consultor Salud Privilegiado_1.sql" />
+    <Build Include="Security\900001 Consultor Administrativo.sql" />
+    <Build Include="Security\SOS_900001 Consultor Administrativo.sql" />
+    <Build Include="Security\Usuario3047.sql" />
+    <Build Include="Security\Usuario3047_1.sql" />
+    <Build Include="Security\BORecobros.sql" />
+    <Build Include="Security\900008 Consultor Salud.sql" />
+    <Build Include="Security\SOS_900008 Consultor Salud.sql" />
+    <Build Include="Security\340014 Consultor Recobros.sql" />
+    <Build Include="Security\SOS_340014 Consultor Recobros.sql" />
+    <Build Include="Security\SOS_sqlprod.sql" />
+    <Build Include="Security\Atep_Soa.sql" />
+    <Build Include="Security\Atep_Soa_1.sql" />
+    <Build Include="Security\310016 Administrador Notificaciones Atep SOA.sql" />
+    <Build Include="Security\SOS_310016 Administrador Notificaciones Atep SOA.sql" />
+    <Build Include="Security\outbts01.sql" />
+    <Build Include="Security\380001 Coordinador Parametros RedSalud.sql" />
+    <Build Include="Security\SOS_380001 Coordinador Parametros RedSalud.sql" />
+    <Build Include="Security\380002 Auxiliar Parametros Red Salud.sql" />
+    <Build Include="Security\SOS_380002 Auxiliar Parametros Red Salud.sql" />
+    <Build Include="Security\380003 Auditor Interno Red Salud.sql" />
+    <Build Include="Security\SOS_380003 Auditor Interno Red Salud.sql" />
+    <Build Include="Security\380004 Consultor Cuentas Medicas Red Salud.sql" />
+    <Build Include="Security\SOS_380004 Consultor Cuentas Medicas Red Salud.sql" />
+    <Build Include="Security\380005 Aprendiz Red de Servicios Red Salud.sql" />
+    <Build Include="Security\SOS_380005 Aprendiz Red de Servicios Red Salud.sql" />
+    <Build Include="Security\380006 Consultor Auxiliar Sedes Red Salud.sql" />
+    <Build Include="Security\SOS_380006 Consultor Auxiliar Sedes Red Salud.sql" />
+    <Build Include="Security\300006 Auditor Interno de PVS.sql" />
+    <Build Include="Security\SOS_310008 Auditor Salud_1.sql" />
+    <Build Include="Security\SOS_310008 Auditor Salud_2.sql" />
+    <Build Include="Security\SOS_310011 Auditoria Interna Salud_1.sql" />
+    <Build Include="Security\SOS_310011 Auditoria Interna Salud_2.sql" />
+    <Build Include="Security\SOS_310009 Autorizadora Notificacion_1.sql" />
+    <Build Include="Security\SOS_310009 Autorizadora Notificacion_2.sql" />
+    <Build Include="Security\aut_webusr.sql" />
+    <Build Include="Security\aut_webusr_1.sql" />
+    <Build Include="Security\330009 Gestor de Alistamiento.sql" />
+    <Build Include="Security\SOS_330009 Gestor de Alistamiento.sql" />
+    <Build Include="Security\330010 Auxiliar Contable.sql" />
+    <Build Include="Security\SOS_330010 Auxiliar Contable.sql" />
+    <Build Include="Security\cpw_webusr.sql" />
+    <Build Include="Security\cpw_webusr_1.sql" />
+    <Build Include="Security\cna_espusr.sql" />
+    <Build Include="Security\cna_espusr_1.sql" />
+    <Build Include="Security\unibase.sql" />
+    <Build Include="Security\unibase_1.sql" />
+    <Build Include="Security\970009 Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970009 Autorizador Validacion Servicio al Cliente.sql" />
+    <Build Include="Security\970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970001 Administrador Servicio al Cliente.sql" />
+    <Build Include="Security\970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\SOS_970007 Consultor Atencion al Cliente.sql" />
+    <Build Include="Security\SOS_sisbds01.sql" />
+    <Build Include="Security\SOS_sisbds01_1.sql" />
+    <Build Include="Security\SOS_310001 Auxiliar de Prestaciones Medicas_1.sql" />
+    <Build Include="Security\SOS_310001 Auxiliar de Prestaciones Medicas_2.sql" />
+    <Build Include="Security\SOS_310010 Auxiliar Sipres Analista Notificaciones_1.sql" />
+    <Build Include="Security\SOS_310010 Auxiliar Sipres Analista Notificaciones_2.sql" />
+    <Build Include="Security\SOS_330003 Consultor de Cuentas Medicas_1.sql" />
+    <Build Include="Security\SOS_330003 Consultor de Cuentas Medicas_2.sql" />
+    <Build Include="Security\SOS_310004 Consultor Salud_1.sql" />
+    <Build Include="Security\SOS_310004 Consultor Salud_2.sql" />
+    <Build Include="Security\SOS_900002 Consultor Servicio al Cliente_1.sql" />
+    <Build Include="Security\SOS_900002 Consultor Servicio al Cliente_2.sql" />
+    <Build Include="Security\SOS_310002 Coordinador de Prestaciones Medicas_1.sql" />
+    <Build Include="Security\SOS_310002 Coordinador de Prestaciones Medicas_2.sql" />
+    <Build Include="Security\SOS_310003 Validador de Prestaciones Medicas_1.sql" />
+    <Build Include="Security\SOS_310003 Validador de Prestaciones Medicas_2.sql" />
+    <Build Include="Security\cargaarchivos_app.sql" />
+    <Build Include="Security\cargaarchivos_app_1.sql" />
+    <Build Include="Security\ctp_webusr.sql" />
+    <Build Include="Security\ctp_webusr_1.sql" />
+    <Build Include="Security\suit_webusr.sql" />
+    <Build Include="Security\suit_webusr_1.sql" />
+    <Build Include="Security\900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\SOS_900007 Consultor Administrativo Novedades.sql" />
+    <Build Include="Security\SOS_900010 Consultor Administrativo Privilegiado.sql" />
+    <Build Include="Security\SOS_900010 Consultor Administrativo Privilegiado_1.sql" />
+    <Build Include="Security\900003 Consultor Asesor Cartera.sql" />
+    <Build Include="Security\SOS_900003 Consultor Asesor Cartera.sql" />
+    <Build Include="Security\900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\SOS_900005 Consultor Asesor Comercial.sql" />
+    <Build Include="Security\Kiosko.sql" />
+    <Build Include="Security\Kiosko_1.sql" />
+    <Build Include="Security\900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\SOS_900004 Consultor Coordinador Comercial.sql" />
+    <Build Include="Security\970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970004 Consultor General Servicio al Cliente.sql" />
+    <Build Include="Security\900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\SOS_900006 Consultor Comercial Privilegiado.sql" />
+    <Build Include="Security\UsroCnsltaSIC.sql" />
+    <Build Include="Security\UsroCnsltaSIC_1.sql" />
+    <Build Include="Security\glosasapp_usr.sql" />
+    <Build Include="Security\glosasapp_usr_1.sql" />
+    <Build Include="Security\500002 Optimizador Base de Datos.sql" />
+    <Build Include="Security\SOS_500002 Optimizador Base de Datos.sql" />
+    <Build Include="Security\ctc_webusr.sql" />
+    <Build Include="Security\ctc_webusr_1.sql" />
+    <Build Include="Security\970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970003 Consultor Jefaturas Servicio al Cliente.sql" />
+    <Build Include="Security\970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970005 Consultor Web Servicio al Cliente.sql" />
+    <Build Include="Security\970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970006 Consultor Kiosko Servicio al Cliente.sql" />
+    <Build Include="Security\970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_970008 Consultor Novedades Servicio al Cliente.sql" />
+    <Build Include="Security\SOS_330008 Auditor Interno de Cuentas Medicas_1.sql" />
+    <Build Include="Security\SOS_330008 Auditor Interno de Cuentas Medicas_2.sql" />
+    <Build Include="Security\portal_webusr.sql" />
+    <Build Include="Security\portal_webusr_1.sql" />
+    <Build Include="Security\SOS_GrupoAcceso_ProveedorSol_Lectura.sql" />
+    <Build Include="Security\SOS_GrupoAcceso_ProveedorSol_Lectura_1.sql" />
+    <Build Include="Security\seg_webusr.sql" />
+    <Build Include="Security\seg_webusr_1.sql" />
+    <Build Include="Security\Apoyo_Seit.sql" />
+    <Build Include="Security\SOS_Apoyo_Seit.sql" />
+    <Build Include="Security\cxp_usr.sql" />
+    <Build Include="Security\cxp_usr_1.sql" />
+    <Build Include="Security\SOS_qvisionceh.sql" />
+    <Build Include="Security\SOS_qvisionceh_1.sql" />
+    <Build Include="Security\QPConsultores.sql" />
+    <Build Include="Security\QPConsultores_1.sql" />
+    <Build Include="Security\proceso3047_webusr.sql" />
+    <Build Include="Security\proceso3047_webusr_1.sql" />
+    <Build Include="Security\SOS_sqlscript.sql" />
+    <Build Include="Security\SOS_sqlscript_1.sql" />
+    <Build Include="Security\TecnicosBasesDatos.sql" />
+    <Build Include="Security\SOS_TecnicosBasesDatos.sql" />
+    <Build Include="Security\OperadoresBasesDatos.sql" />
+    <Build Include="Security\SOS_OperadoresBasesDatos.sql" />
+    <Build Include="Security\at3047_webusr.sql" />
+    <Build Include="Security\at3047_webusr_1.sql" />
+    <Build Include="Security\autsalud_webusr.sql" />
+    <Build Include="Security\autsalud_webusr_1.sql" />
+    <Build Include="Security\SOS_980001 Administrador Gestion IT.sql" />
+    <Build Include="Security\SOS_980001 Administrador Gestion IT_1.sql" />
+    <Build Include="Security\procesope_webusr.sql" />
+    <Build Include="Security\procesope_webusr_1.sql" />
+    <Build Include="Security\bdua_webusr.sql" />
+    <Build Include="Security\bdua_webusr_1.sql" />
+    <Build Include="Security\310019 Auditor Autorizador CNA.sql" />
+    <Build Include="Security\SOS_310019 Auditor Autorizador CNA.sql" />
+    <Build Include="Security\SOS_980005 Administrador Salud Gestion IT.sql" />
+    <Build Include="Security\SOS_980005 Administrador Salud Gestion IT_1.sql" />
+    <Build Include="Security\SOS_910001 Operador Procesos.sql" />
+    <Build Include="Security\SOS_910001 Operador Procesos_1.sql" />
+    <Build Include="Security\SOS_qvisionczg.sql" />
+    <Build Include="Security\SOS_qvisionczg_1.sql" />
+    <Build Include="Security\envioops_webusr.sql" />
+    <Build Include="Security\envioops_webusr_1.sql" />
+    <Build Include="Security\qvision.sql" />
+    <Build Include="Security\qvision_1.sql" />
+    <Build Include="Security\SOS_arusbd01.sql" />
+    <Build Include="Security\SOS_arusbd01_1.sql" />
+    <Build Include="Security\SOS_setier01.sql" />
+    <Build Include="Security\SOS_setier01_1.sql" />
+    <Build Include="Security\SOS_Acceso_EquipoDiseno_SolucionesInformaticas.sql" />
+    <Build Include="Security\SOS_sqlsrvc.sql" />
+    <Build Include="Security\SOS_gerniarwva.sql" />
+    <Build Include="Security\SOS_gerniarwva_1.sql" />
+    <Build Include="Security\SOS_sqlsrv.sql" />
+    <Build Include="Security\SOS_sqlagnt.sql" />
+    <Build Include="Security\SOS_sqlagnt_1.sql" />
+    <Build Include="Security\SOS_sqlreplica.sql" />
+    <Build Include="Security\SOS_sqlreplica_1.sql" />
+    <Build Include="Security\process_usr.sql" />
+    <Build Include="Security\process_usr_1.sql" />
+    <Build Include="Security\atep_webusr.sql" />
+    <Build Include="Security\atep_webusr_1.sql" />
+    <Build Include="Security\quick_webusr.sql" />
+    <Build Include="Security\quick_webusr_1.sql" />
+    <Build Include="Security\600007 Consulta Parametros Cartera Pac.sql" />
+    <Build Include="Security\SOS_600007 Consulta Parametros Cartera Pac.sql" />
+    <Build Include="Security\600008 Coordinador Parametros Cartera Pac.sql" />
+    <Build Include="Security\SOS_600008 Coordinador Parametros Cartera Pac.sql" />
+    <Build Include="Security\700003 Coordinador Cartera Pac.sql" />
+    <Build Include="Security\SOS_700003 Coordinador Cartera Pac.sql" />
+    <Build Include="Security\fe_webusr.sql" />
+    <Build Include="Security\fe_webusr_1.sql" />
+    <Build Include="Security\SOS_Acceso_Proveedores_SolucionesInformaticas_Escritura.sql" />
+    <Build Include="Security\SOS_Acceso_Proveedores_SolucionesInformaticas_Escritura_1.sql" />
+    <Build Include="Security\reportingservices_usr.sql" />
+    <Build Include="Security\reportingservices_usr_1.sql" />
+    <Build Include="Security\Sql_SSRS.sql" />
+    <Build Include="Security\Sql_SSRS_1.sql" />
+    <Build Include="Security\cartera_webusr.sql" />
+    <Build Include="Security\cartera_webusr_1.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\fnLimpiarCaracteresEspeciales.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaValorLetras.sql" />
+    <Build Include="dbo\Functions\FnCalcularMaximoDocumentosBeneficiario.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaAnos.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaCamposSelect.sql" />
+    <Build Include="dbo\Functions\fnCalcularMaximoDetalleDocumento.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoDocumento.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoEstadoFormularioEmpleador.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoPosC.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaFechaCorteEscenario.sql" />
+    <Build Include="dbo\Functions\fnCalculaDigitoVerificacionModulo11.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaDiaHabil.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaNui.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaWhere.sql" />
+    <Build Include="dbo\Functions\fnCalculaNuixTipoNumeroID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaAnosOptimizada.sql" />
+    <Build Include="dbo\Functions\fnCalcularCamposNombres.sql" />
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosDobles.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosNoTraspasados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosNoTraspasadosAfiliados.sql" />
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosTraspasados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosTraspasadosAfiliacion.sql" />
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosxGuia.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularCausaNovedad.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularCodigoAsesor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaNuixNombresFecha.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularCodigoVigenciaAsesor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularConsecutivoAsesor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularTotalFormulariosxGuiaAfiliacion.sql" />
+    <Build Include="dbo\Functions\fnCambioEstadoGuia.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCampostabla.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnRecuperError.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnLimpiarCaracteresEspecialesCorreo.sql" />
+    <Build Include="dbo\Functions\fnCalcularConsecutivoAsignacionAsesor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularConsecutivoRegistrosLiquidacion.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularFechaReporteValidadorDerechos.sql" />
+    <Build Include="dbo\Functions\fnCalcularMaximoBeneficiario.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoCobranzas.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoConceptosPendientes.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoConsecutivoValorDetalle.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoRolFormularioEmpleador.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoSucursalAportante.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularMaximoVigenciasCobranzas.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalcularTiempo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculaLlaveNov.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculallave.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnCalculallaveServidor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnPmTraerGrupoFamiliarContrato.sql" />
+    <Build Include="dbo\Functions\fnPmValidaItemCapitados.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnPmConsultaDetConveniosCapitacionAfiliadoValidacion.sql" />
+    <Build Include="dbo\Functions\fnPmTraerGrupoFamiliarFormulario.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Functions\fnDividirNombreCompleto.sql" />
+    <Build Include="dbo\Functions\fndatostabla.sql" />
+    <Build Include="dbo\Stored Procedures\spDMTraerSedes.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaBonosxAuxiliar.sql" />
+    <Build Include="dbo\Stored Procedures\spWEBConsultaATEP.sql" />
+    <Build Include="dbo\Stored Procedures\spFEGenerarCUFE.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliado.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SpMNConsultaTutelasWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliado_Historico.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerOficinas.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerNombreEmpleadorMasivoPE.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\Mant_DBREINDEX_Automatico.sql" />
+    <Build Include="dbo\Stored Procedures\Mant_DBDEFRAG_Automatico.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerParametrosProgramacion.sql" />
+    <Build Include="dbo\Stored Procedures\spcmTraerValidacionesEspeciales.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaAfiliadoNui.sql" />
+    <Build Include="dbo\Stored Procedures\spCUbuscaConveniosLogCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spCUbuscavalidacionCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerTiposIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spCUTraeValidaciónDerechoxCedula.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerPlanes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_MSins_dbotbOrigenesNovedad_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_dbotbOrigenesNovedad_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerNombreEmpleador.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPmValidaServiciosCapitadosCaja_seti.sql" />
+    <Build Include="dbo\Stored Procedures\spCUBuscaItemsLogCaja.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_dbotbOutsourcings_Vigencias_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorCajaPrueba.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\sp_MSdel_dbotbOutsourcings_Vigencias_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorCajaPruebas.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorCajaAngela.sql" />
+    <Build Include="dbo\Stored Procedures\spRecobrosConsultaAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorCaja2.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spRecobrosConsultaAfiliado_AlDia.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSins_dbotbOficinasCertificados_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorPrueba.sql" />
+    <Build Include="dbo\Stored Procedures\SpCUConsultaHistoricoValidacion.sql" />
+    <Build Include="dbo\Stored Procedures\SpCUConsultaValidaciones.sql" />
+    <Build Include="dbo\Stored Procedures\spCUTiposAtencion.sql" />
+    <Build Include="dbo\Stored Procedures\sp_MSdel_dbotbOficinasCertificados_msrepl_ccs.sql" />
+    <Build Include="dbo\Stored Procedures\spCuConsultaPrestacionesMedicasAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\spCUSeleccionaContingencias.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaDetEmpleadoresAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\spRecobrosConsultaAfiliado_Historico.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaDetEmpleadoresAfiliado_alDia.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaDetConveniosCapitacionAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliadoCuentas_AlDia.sql" />
+    <Build Include="dbo\Stored Procedures\spWSInformacionConvenioCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliadoCuentas_Historico.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaValidadorAfiliadoEmpleador.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliadoCuentas.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaValidadorDetalleConveniosCapitacion.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerGrupoFamiliarCuentas.sql" />
+    <Build Include="dbo\Stored Procedures\SpVwInsertaLogValidadorResponde.sql" />
+    <Build Include="dbo\Stored Procedures\spBuscarAfiliadoxTipoyNumeroIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerGrupoFamiliar.sql" />
+    <Build Include="dbo\Stored Procedures\SpVwGenerarValidacionNormal.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAtencionesPrestadas.sql" />
+    <Build Include="dbo\Stored Procedures\spPmValidaServiciosCapitadosReglas.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorPrueba2.sql" />
+    <Build Include="dbo\Stored Procedures\SpPmGrabaafiliadoEspecialCajaPrueba.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaValidaciones.sql" />
+    <Build Include="dbo\Stored Procedures\spPmbuscaConveniosLogCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spPmbuscavalidacionCajaPrueba.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerTiposIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\SpPmTraerSedes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPmTraerCiudades.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPmConsultaPrestacionCapitada.sql" />
+    <Build Include="dbo\Stored Procedures\spSSTraerSexo.sql" />
+    <Build Include="dbo\Stored Procedures\spValidaDerechosPac4.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerIPSCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spCuConsultaPrestacionesMedicasEmpleador.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidador.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerMotivosValidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaPacVigentes2.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaDerechoAfiliadoAlDia.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaPacVigentes.sql" />
+    <Build Include="dbo\Stored Procedures\SpValidaNumeroAutorizacion.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaMedicoOcupacional.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaContactoEmpresarial.sql" />
+    <Build Include="dbo\Stored Procedures\spConsultaGrupoPoblacional.sql" />
+    <Build Include="dbo\Stored Procedures\spCrearMedicoOcupacional.sql" />
+    <Build Include="dbo\Stored Procedures\spValidaPosVigente.sql" />
+    <Build Include="dbo\Stored Procedures\spActualizarMedicoOcupacional.sql" />
+    <Build Include="dbo\Stored Procedures\spAcotarMedicoOcupacional.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerNombreEmpleadorSipres.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliado_AlDiaNUI.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerPrestadorVigenciasIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spPmFechaActualizacionDatos.sql" />
+    <Build Include="dbo\Stored Procedures\SpCUConsultaDatosUsuarioValidacionEspecialWeb.sql" />
+    <Build Include="dbo\Stored Procedures\SpPmConsultaDatosUsuarioValidacionEspecial.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPMTraerOficinasUsuariosWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerOpcionesMenuWeb.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPmCalcularFechaReporteValidadorDerechos.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaDetConveniosCapitacionAfiliadoValidacion.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaDetEmpleadoresAfiliado_Historico.sql" />
+    <Build Include="dbo\Stored Procedures\spPmDatosAdicionalesAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\p_sizetables.sql" />
+    <Build Include="dbo\Stored Procedures\spGrabarDetalleNovedadesAfiliacion.sql" />
+    <Build Include="dbo\Stored Procedures\spPmFechaHistorico.sql" />
+    <Build Include="dbo\Stored Procedures\sp_sizetables_diario.sql" />
+    <Build Include="dbo\Stored Procedures\spPmInformacionConvenioCaja.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerEntidades.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spConsultaEventoAfiliadoWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spPTLTraerCiudadesPortal.sql" />
+    <Build Include="dbo\Stored Procedures\spPmValidaItemCapitados.sql" />
+    <Build Include="dbo\Stored Procedures\spPmValidaServiciosCapitadosCaja.sql" />
+    <Build Include="dbo\Stored Procedures\MANT_DBDEFRAG_BDAfiliacionValidador.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorCaja.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\MANT_DBReindex_BDAfiliacionValidador.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerActividadesEconomicas.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerCargos.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spTraerParentescos.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spWSConsultaFechaDatos.sql" />
+    <Build Include="dbo\Stored Procedures\spWSConsultaOficinaUsuarioWeb.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerRangosSalariales.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spWSTraerPlan.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerTiposAfiliado.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spWSTraerTipoIdentificacion.sql" />
+    <Build Include="dbo\Stored Procedures\spTraerTiposCotizante.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spWEBConsultaAfiliado_AlDia.sql" />
+    <Build Include="dbo\Stored Procedures\spWEBPmInsertalogvalidador.sql" />
+    <Build Include="dbo\Stored Procedures\spSSTraerCiudades.sql" />
+    <Build Include="dbo\Stored Procedures\spPmConsultaAfiliado_AlDia.sql" />
+    <Build Include="dbo\Stored Procedures\spActualizarIdentificacionAfiliado.sql" />
+    <Build Include="dbo\Stored Procedures\spPminsertalogvalidadorSipres.sql" />
+    <Build Include="dbo\Stored Procedures\spPmValidaNumeroAutorizacion.sql" />
+    <Build Include="dbo\Stored Procedures\spCMTraerOficinas.sql" />
+    <Build Include="dbo\Stored Procedures\spPmTraerServiciosBono.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\spPMTraerOficinasSedes.sql" />
+    <Build Include="dbo\Stored Procedures\SpPmTraerNombrexLogin.sql" />
+    <Build Include="dbo\Stored Procedures\spPmBuscaPersonasxNombre.sql" />
+    <Build Include="dbo\Stored Procedures\spPMConsultaBonosE.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\User Defined Types\udtTipoIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtApellido.sql" />
+    <Build Include="dbo\User Defined Types\udtCiudad.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigo.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDiagnostico.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoIps.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoPrestacion.sql" />
+    <Build Include="dbo\User Defined Types\udtConsecutivo.sql" />
+    <Build Include="dbo\User Defined Types\udtDescripcion.sql" />
+    <Build Include="dbo\User Defined Types\udtDireccion.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumento.sql" />
+    <Build Include="dbo\User Defined Types\udtDocumentoLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtEmail.sql" />
+    <Build Include="dbo\User Defined Types\udtLogico.sql" />
+    <Build Include="dbo\User Defined Types\udtNombre.sql" />
+    <Build Include="dbo\User Defined Types\udtNombreObjeto.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacion.sql" />
+    <Build Include="dbo\User Defined Types\udtNumeroIdentificacionLargo.sql" />
+    <Build Include="dbo\User Defined Types\udtObservacion.sql" />
+    <Build Include="dbo\User Defined Types\udtPeriodo.sql" />
+    <Build Include="dbo\User Defined Types\udtSede.sql" />
+    <Build Include="dbo\User Defined Types\udtSexo.sql" />
+    <Build Include="dbo\User Defined Types\udtTelefono.sql" />
+    <Build Include="dbo\User Defined Types\udtTipoFormulario.sql" />
+    <Build Include="dbo\User Defined Types\udtUsuario.sql" />
+    <Build Include="dbo\User Defined Types\udtValorDecimales.sql" />
+    <Build Include="dbo\User Defined Types\udtValorGrande.sql" />
+    <Build Include="dbo\User Defined Types\udtValorPequeno.sql" />
+    <Build Include="dbo\User Defined Types\udtnumeroidentificacion2.sql" />
+    <Build Include="dbo\User Defined Types\udtCodigoSalud.sql" />
+    <Build Include="Security\SOS_BO_CNA_1.sql" />
+    <Build Include="Security\MSReplPAL_10_30_1.sql" />
+    <Build Include="Security\SOS_330008 Auditor Interno de Cuentas Medicas_3.sql" />
+    <Build Include="Security\SOS_arusbd01_2.sql" />
+    <Build Include="Security\SOS_Acceso_EquipoDiseno_SolucionesInformaticas_1.sql" />
+    <Build Include="Security\Desarrollo_1.sql" />
+    <Build Include="Security\Permissions.sql" />
+  </ItemGroup>
+</Project>

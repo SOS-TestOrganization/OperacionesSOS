@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\sqlscript]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

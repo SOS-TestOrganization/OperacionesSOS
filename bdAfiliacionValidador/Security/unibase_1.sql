@@ -1,0 +1,7 @@
+﻿CREATE LOGIN [unibase]
+    WITH PASSWORD = N'bik11xzm6Dxn|Ieikjl{pitcmsFT7_&#$!~<bi,6ox#izOuk', SID = 0xF3C2B56A6515904E99917FAD3229BAEC, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+
+
+GO
+ALTER LOGIN [unibase] DISABLE;
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\310004 Consultor Salud]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

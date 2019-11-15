@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Atep_Soa]
+    WITH PASSWORD = N'ikxzneil{pitciFLUxs~izFumsFT7_&#$!~<ck;hl.h{zoma', SID = 0x52439B8CE5868D4784ABADDCC85F5125, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

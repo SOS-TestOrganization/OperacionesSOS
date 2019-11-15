@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [websos]
+    WITH PASSWORD = N'{t+sXnhS>fdk~|L>{jroQfc{msFT7_&#$!~<sjfw{Vckhjlg', SID = 0x2438006EA7CAC04A9FF241AC688C3B83, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

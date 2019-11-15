@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Audio]
+    WITH PASSWORD = N'{9tsYagn.hfHdk+|roofc{sjmsFT7_&#$!~<f w{chjgzytz', SID = 0x4AB1E264BA65674D98564ADF55F4B5E4, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

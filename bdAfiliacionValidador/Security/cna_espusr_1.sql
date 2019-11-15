@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [cna_espusr]
+    WITH PASSWORD = N'5TicHskx!Lzneil{piM4tcixmsFT7_&#$!~<i3zukhl9hzom', SID = 0xCBE0AC4941E9DD4DA2B5EC4995A4E73C, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

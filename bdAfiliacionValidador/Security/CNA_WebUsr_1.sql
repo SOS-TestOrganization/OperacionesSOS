@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [CNA_WebUsr]
+    WITH PASSWORD = N'{tsnhNfdk{||rtofcy{s{jfwmsFT7_&#$!~<{chjgzyQtzti', SID = 0x6E6A42A9EDBCCE498EA973D9A72F2F67, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

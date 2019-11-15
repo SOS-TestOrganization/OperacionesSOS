@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\sqlreplica]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

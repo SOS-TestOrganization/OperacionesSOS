@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [Usuario3047]
+    WITH PASSWORD = N'{`tUsC9n$hfadk|5rofHc{sjmsFT7_&#$!~<!fIy{w{ch%jG', SID = 0x0AB43A0B3D82A446AEA5E9285FC39045, DEFAULT_DATABASE = [bdSeguridad], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

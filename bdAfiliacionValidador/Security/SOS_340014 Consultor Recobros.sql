@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\340014 Consultor Recobros]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

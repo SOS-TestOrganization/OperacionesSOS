@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [qvision]
+    WITH PASSWORD = N'%{tKsnhfidk|;rofc82{xsjXmsFT7_&#$!~<Q=yfw8I{c_hj', SID = 0x56375A9FF37A38418AF7C4BDB2115AFC, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

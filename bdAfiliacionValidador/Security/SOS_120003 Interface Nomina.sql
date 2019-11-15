@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\120003 Interface Nomina]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

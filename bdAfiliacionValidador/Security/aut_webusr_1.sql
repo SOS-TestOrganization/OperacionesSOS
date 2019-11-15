@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [aut_webusr]
+    WITH PASSWORD = N'{twsnrh3fEdk{|rxoBfc{sjfmsFT7_&#$!~<w{Mchj5g5Sz7', SID = 0x43188B7811349E4D862015D873D72E43, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

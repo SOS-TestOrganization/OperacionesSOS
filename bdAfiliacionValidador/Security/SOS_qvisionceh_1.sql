@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\qvisionceh]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

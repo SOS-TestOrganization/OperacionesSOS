@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [UsroCnsltaSIC]
+    WITH PASSWORD = N'ikxUFznCeil{pitc+Tie=c}xmsFT7_&#$!~<izuDkkhl_~?h', SID = 0x2CD21BCD45004642AA5FFBF9323EB980, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

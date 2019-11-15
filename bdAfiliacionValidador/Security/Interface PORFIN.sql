@@ -1,0 +1,7 @@
+﻿CREATE ROLE [Interface PORFIN]
+    AUTHORIZATION [dbo];
+
+
+GO
+ALTER ROLE [Interface PORFIN] ADD MEMBER [120004 Interface PORFIN];
+

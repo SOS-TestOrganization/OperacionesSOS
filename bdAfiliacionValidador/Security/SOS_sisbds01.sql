@@ -1,0 +1,2 @@
+﻿CREATE USER [SOS\sisbds01] FOR LOGIN [SOS\sisbds01];
+

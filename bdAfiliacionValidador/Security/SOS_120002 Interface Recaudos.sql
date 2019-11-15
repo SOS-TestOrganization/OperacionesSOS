@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\120002 Interface Recaudos]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [cxp_usr]
+    WITH PASSWORD = N'dieinvcPzlx;d1cmn|vee{ywmsFT7_&#$!~<xopchhsTts2f', SID = 0x3EB6BB30293F854EA51C96E5C9DCB089, DEFAULT_DATABASE = [BDSisalud], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

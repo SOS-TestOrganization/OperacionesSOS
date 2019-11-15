@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\330007 Liquidador Facturas]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

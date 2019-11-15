@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\120005 Interface Recobros]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

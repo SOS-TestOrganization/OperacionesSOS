@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\sisbds01]
+    FROM WINDOWS WITH DEFAULT_DATABASE = [bdSeguridad], DEFAULT_LANGUAGE = [us_english];
+

@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [SOS\330010 Auxiliar Contable]
+    FROM WINDOWS WITH DEFAULT_DATABASE = [bdSeguridad], DEFAULT_LANGUAGE = [us_english];
+

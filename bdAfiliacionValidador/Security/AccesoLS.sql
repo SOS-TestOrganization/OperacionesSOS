@@ -1,0 +1,2 @@
+﻿CREATE USER [AccesoLS] FOR LOGIN [AccesoLS];
+

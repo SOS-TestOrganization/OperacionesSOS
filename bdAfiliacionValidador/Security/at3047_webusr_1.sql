@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [at3047_webusr]
+    WITH PASSWORD = N'{itsnwqahslPfnv`Xzdk|QDRmsFT7_&#$!~<ro2fc{sj fw{', SID = 0x3DBE0C601A16DF49AE12410124F1E9DC, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+
