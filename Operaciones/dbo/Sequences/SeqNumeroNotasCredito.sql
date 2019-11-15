@@ -1,6 +1,0 @@
-﻿CREATE SEQUENCE [dbo].[SeqNumeroNotasCredito]
-    AS INT
-    START WITH 128029
-    INCREMENT BY 1
-    CACHE 100;
-

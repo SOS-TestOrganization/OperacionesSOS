@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [SOS\800001 Analista Tesoreria]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
-

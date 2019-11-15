@@ -1,2 +1,0 @@
-﻿CREATE USER [200201 Comercial] FOR LOGIN [SOS\200201 Comercial];
-

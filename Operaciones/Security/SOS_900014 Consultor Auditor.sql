@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [SOS\900014 Consultor Auditor]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
-

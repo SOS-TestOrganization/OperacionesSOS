@@ -1,3 +1,0 @@
-﻿CREATE LOGIN [SOS\910001 Operador Procesos]
-    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
-

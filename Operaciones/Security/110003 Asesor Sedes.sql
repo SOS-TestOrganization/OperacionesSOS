@@ -1,2 +1,0 @@
-﻿CREATE USER [110003 Asesor Sedes] FOR LOGIN [SOS\110003 Asesor Sedes];
-

@@ -1,2 +1,0 @@
-﻿CREATE USER [200111 Auditor] FOR LOGIN [SOS\200111 Auditor];
-

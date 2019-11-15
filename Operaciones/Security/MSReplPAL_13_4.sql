@@ -1,7 +1,0 @@
-﻿CREATE ROLE [MSReplPAL_13_4]
-    AUTHORIZATION [dbo];
-
-
-GO
-ALTER ROLE [MSReplPAL_13_4] ADD MEMBER [sqlprod];
-

@@ -1,5 +1,0 @@
-﻿CREATE SEQUENCE [dbo].[seqNumeroEstadoCuentaDIAN]
-    AS BIGINT
-    START WITH 4000000
-    INCREMENT BY 1;
-
