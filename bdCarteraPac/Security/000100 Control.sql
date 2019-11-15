@@ -1,0 +1,2 @@
+﻿CREATE USER [000100 Control] FOR LOGIN [SOS\000100 Control];
+
